@@ -2,14 +2,8 @@ import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Structure from "../components/Structure";
 
-export const routes = {
-  product: (id: string, name: string) => `/produto/${id}/${name}`,
-  cart: () => "/carrinho",
-  home: () => "/"
-}
-
 type Props = {
-  routes: Array<TRoute>
+  routes: Array<TComponentRoute>
 }
 export const Router: React.FC<Props> = ({ routes }) => {
   return (
@@ -25,7 +19,7 @@ export const Router: React.FC<Props> = ({ routes }) => {
   );
 };
 
-export type TRoute = {
+export type TComponentRoute = {
   path: string,
   Component: React.FC<any>
 }

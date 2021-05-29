@@ -8,11 +8,12 @@ import ProductListView from "./ProductListView";
 import { increment } from '../../../app/slices/cart';
 import { useAppDispatch } from '../../../app/hooks';
 import { withRouter, RouterProps } from 'react-router-dom'
-import { routes } from '../../Router';
+import useRoutes from "../../../hooks/useRoutes";
 import { showErrorModal, showSuccessNotification } from "../../../components/Message/Message";
 
 const ProductList: React.FC<RouterProps> = ({ history }) => {
   const dispatch = useAppDispatch();
+  const routes = useRoutes();
   const pagination: TPagination = usePagination(8);
   const productList: TProductList = useProductList(pagination);
 
@@ -28,7 +29,7 @@ const ProductList: React.FC<RouterProps> = ({ history }) => {
 
   const onPressProduct = ({ id, name }: TProduct) => {
     const formattedName = name.replaceAll(" ", "-").toLocaleLowerCase();
-    history.push(routes.product(String(id), formattedName))
+    routes.product(String(id), formattedName).go();
   };
 
   const onAddToCart = (product: TProduct) => {
