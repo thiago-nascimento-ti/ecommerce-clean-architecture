@@ -21,8 +21,9 @@ export class AddProductOnCartUseCase {
 }
 
 export class InsuficientItemStockError extends Error {
-  title: String
-  content: String
+  title: string
+  content: string
+
   constructor(product: TProduct, necessaryStock: number) {
     super(`Product ${product.name} does not have ${necessaryStock} units in stock`)
     this.title = `Estoque insuficiente - ${product.name}`;

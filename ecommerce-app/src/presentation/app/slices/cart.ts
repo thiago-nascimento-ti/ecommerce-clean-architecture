@@ -41,6 +41,7 @@ const { updateCart } = slice.actions;
 
 export const increment = (
   { product, amount}: TCartAction,
+  onResolve: (product: TProduct) => void,
   onInsuficientItemStock: (error: InsuficientItemStockError) => void 
 ): AppThunk => async (
   dispatch,
@@ -50,13 +51,14 @@ export const increment = (
   const cart: TCart = adapter.fromJson(currentState);
   try {
     await addProductOnCartUseCase.execute(cart, product, amount);
+    const newState = adapter.toJson(cart);
+    dispatch(updateCart(newState))
+    onResolve(product);
   } catch (error) {
     if (error instanceof InsuficientItemStockError) {
       onInsuficientItemStock(error);
     }
   }
-  const newState = adapter.toJson(cart);
-  dispatch(updateCart(newState))
 };
 export const selectCart = (state: RootState) => state.cart;
 
