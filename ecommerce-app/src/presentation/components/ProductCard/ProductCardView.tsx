@@ -15,8 +15,8 @@ const ProductView: React.FC<Props> = ({ product, onPressProduct, onAddToCart }) 
     <>
       <Card
         hoverable
-        style={{ width: 300 }}
-        cover={<img alt="example" src={product.image} />}
+        style={{ width: 325 }}
+        cover={<img alt={product.name} src={product.image} />}
         onClick={() => onPressProduct(product)}
       >
         <Meta
