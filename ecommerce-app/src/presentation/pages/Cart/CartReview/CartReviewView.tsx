@@ -1,0 +1,50 @@
+import React from "react";
+import { ICart } from '../../../../domain/entities';
+import { Col, Button } from "antd";
+import { styled } from "./CartReviewStyled";
+import InlinePrice from "../../../components/InlinePrice";
+
+type Props = {
+  cart: ICart
+  maxParcels: number
+  goToHome: () => void
+  goToCheckout: () => void
+};
+const CartReviewView: React.FC<Props> = ({ cart, maxParcels, goToHome, goToCheckout }) => {
+  const productLabel = cart.amount === 1 ? " produto" : " produtos";
+  const { basicPrice, shippingPrice, finalPrice } = styled;
+  
+  return (
+    <Col span={5} style={styled.col}>
+      <p style={styled.title}>Resumo do pedido</p>
+      <InlinePrice 
+        color={basicPrice.color} 
+        fontSize={basicPrice.fontSize}
+        label={cart.amount+productLabel} 
+        price={cart.payable}
+      />
+      <InlinePrice 
+        color={shippingPrice.color} 
+        fontSize={shippingPrice.fontSize}
+        label="Frete" 
+        price={0}
+      />
+      <InlinePrice 
+        color={finalPrice.color}
+        fontSize={finalPrice.fontSize}
+        fontWeight={finalPrice.fontWeight}
+        label="Total" 
+        price={cart.payable}
+      />
+      <p style={styled.parcel}>em até {maxParcels}x sem juros</p>
+      <Button style={styled.button} onClick={goToHome}>
+        Adicionar mais produtos
+      </Button>
+      <Button style={styled.button} type="primary" onClick={goToCheckout}>
+        Finalizar compra
+      </Button>
+    </Col>
+  );
+};
+
+export default CartReviewView;

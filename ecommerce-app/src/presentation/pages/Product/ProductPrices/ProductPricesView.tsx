@@ -9,7 +9,7 @@ type Props = {
 };
 const ProductPricesView: React.FC<Props> = ({ product, onAddToCart }) => { 
   return (
-    <Col span={5} style={styled.colRight}>
+    <Col span={5} style={styled.col}>
       <p style={styled.price}>R$ {product.price.toFixed(2).replace(".", ",")}</p>
       <p>em {product.maxParcelas}x sem juros no cartão de crédito</p>
       <Rate value={product.rate} disabled />

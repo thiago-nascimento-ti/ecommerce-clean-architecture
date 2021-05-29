@@ -7,6 +7,7 @@ export default function useBreadcrumb(): Array<TLocation> {
   const locationItems: Array<TLocation> = [];
   addLocationItemToHome(locationItems);
   addLocationItemToProduct(locationItems, location);
+  addLocationToCheckout(locationItems, location);
 
   return locationItems;
 }
@@ -23,6 +24,14 @@ function addLocationItemToProduct(locationItems: Array<TLocation>, location: Loc
       name: `produto - ${id}`,
       uri: location.pathname
     })
+  }
+}
+
+function addLocationToCheckout(locationItems: Array<TLocation>, location: Location): void {
+  const locations = location.pathname.split("/");
+  const [,name] = locations
+  if (locations.some((path: string) => path === "carrinho")) {
+    locationItems.push({name: name, uri: location.pathname}) 
   }
 }
 

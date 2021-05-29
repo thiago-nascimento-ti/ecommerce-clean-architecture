@@ -1,5 +1,5 @@
 export const styled = {
-  colRight: {
+  col: {
     paddingTop: 100,
     marginLeft: 10, 
     background: "white",

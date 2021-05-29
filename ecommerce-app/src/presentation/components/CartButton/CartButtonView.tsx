@@ -6,14 +6,14 @@ type Props = {
   itemAmount?: number
   onClick: () => void
 }
-const CheckoutButtonView: React.FC<Props> = ({ itemAmount = 0, onClick }) => {
+const CartButtonView: React.FC<Props> = ({ itemAmount = 0, onClick }) => {
   return (
     <Badge count={itemAmount} overflowCount={999}>
       <Button onClick={onClick} size="large" icon={<ShoppingCartOutlined />}>
-        Checkout
+        Carrinho
       </Button>
     </Badge>
   );
 };
 
-export default CheckoutButtonView;
+export default CartButtonView;

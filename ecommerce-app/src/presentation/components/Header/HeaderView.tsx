@@ -1,6 +1,6 @@
 import React from "react";
 import { PageHeader } from "antd";
-import CheckoutButton from "../CheckoutButton";
+import CartButton from "../CartButton";
 
 type Props = {}
 const HeaderView: React.FC<Props> = () => {
@@ -10,7 +10,7 @@ const HeaderView: React.FC<Props> = () => {
         ghost={false}
         title="Ecommerce"
         subTitle="best place to buy"
-        extra={[<CheckoutButton key="1"/>]}
+        extra={[<CartButton key="1"/>]}
       />
       <div className="ant-layout-header" />
     </>

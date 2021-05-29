@@ -1,5 +1,5 @@
 export const styled = {
-  colLeft: {
+  col: {
     padding: 20,
     backgroundColor: "white"
   },
