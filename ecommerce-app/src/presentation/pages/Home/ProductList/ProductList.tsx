@@ -11,7 +11,6 @@ import { withRouter, RouterProps } from 'react-router-dom'
 import { routes } from '../../Router';
 import { showErrorModal, showSuccessNotification } from "../../../components/Message/Message";
 
-
 const ProductList: React.FC<RouterProps> = ({ history }) => {
   const dispatch = useAppDispatch();
   const pagination: TPagination = usePagination(8);

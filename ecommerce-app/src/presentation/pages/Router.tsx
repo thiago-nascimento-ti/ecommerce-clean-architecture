@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
+import Structure from "../components/Structure";
 
 export const routes = {
   product: (id: string, name: string) => `/produto/${id}/${name}`,
@@ -13,11 +14,13 @@ type Props = {
 export const Router: React.FC<Props> = ({ routes }) => {
   return (
     <BrowserRouter>
-      <Switch>
-        {routes.map(({path, Component}, key) => {
-          return <Route key={key} path={path} component={Component} />
-        })}
-      </Switch>
+      <Structure>
+        <Switch>
+          {routes.map(({path, Component}, key) => {
+            return <Route key={key} path={path} component={Component} />
+          })}
+        </Switch>
+      </Structure>
     </BrowserRouter>
   );
 };

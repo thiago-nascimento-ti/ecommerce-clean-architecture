@@ -8,7 +8,7 @@ import { styled } from "./StructureStyled";
 const { Content } = Layout;
 
 type Props = {
-  children: ReactNode,
+  children: ReactNode
 };
 const StructureView: React.FC<Props> = ({ children }) => {
   return (
@@ -16,7 +16,7 @@ const StructureView: React.FC<Props> = ({ children }) => {
       <Header />
       <Content style={styled.content}>
         <>
-        <Breadcrumb items={["teste01", "teste02"]}></Breadcrumb>
+        <Breadcrumb/>
         {children}
         </>
       </Content>

@@ -1,18 +1,28 @@
 import React from "react";
 import { Breadcrumb } from "antd";
 import { styled } from "./BreadcrumbStyled";
+import { Link } from 'react-router-dom';
 
-type Props = {
-  items: Array<string>
+type Props =  {
+  locationItems: Array<TLocation>
 }
-const BreadcrumbView: React.FC<Props> = ({ items = []}) => {
+const BreadcrumbView: React.FC<Props> = ({ locationItems }) => {
   return (
     <Breadcrumb style={styled.breadcrumb}>
-      {items.map((item, key) => {
-        return <Breadcrumb.Item key={key}>{item}</Breadcrumb.Item>;
+      {locationItems.map(({name, uri}, key) => {
+        return (
+          <Breadcrumb.Item key={key}>
+            <Link to={uri}>{name}</Link>
+          </Breadcrumb.Item>
+        )
       })}
     </Breadcrumb>
   );
 };
+
+export type TLocation = {
+  name: string
+  uri: string
+}
 
 export default BreadcrumbView;
