@@ -15,13 +15,10 @@ const StructureView: React.FC<Props> = ({ children }) => {
     <Layout>
       <Header />
       <Content style={styled.content}>
+        <>
         <Breadcrumb items={["teste01", "teste02"]}></Breadcrumb>
-        <Layout
-          className="site-layout-background"
-          style={styled.layout}
-        >
-          {children}
-        </Layout>
+        {children}
+        </>
       </Content>
       <Footer />
     </Layout>

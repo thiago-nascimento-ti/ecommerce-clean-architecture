@@ -14,8 +14,8 @@ export const styled = {
   colRight: {
     marginLeft: 10, 
     background: "white",
-	  justifyContent: "center",
-    'text-align': "center", 
+    textAlign: "center" as "center",
+	  justifyContent: "center", 
   },
   price: {
     padding: 20,

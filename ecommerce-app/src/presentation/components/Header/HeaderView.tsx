@@ -1,24 +1,16 @@
 import React from "react";
-import { PageHeader, Button, Badge } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { PageHeader } from "antd";
+import CheckoutButton from "../CheckoutButton";
 
-type Props = {
-  itemAmount?: number
-}
-const HeaderView: React.FC<Props> = ({ itemAmount = 5 }) => {
+type Props = {}
+const HeaderView: React.FC<Props> = () => {
   return (
     <>
       <PageHeader
         ghost={false}
         title="Ecommerce"
         subTitle="best place to buy"
-        extra={[
-          <Badge key="1" count={itemAmount} overflowCount={999}>
-            <Button size="large" icon={<ShoppingCartOutlined />}>
-              Checkout
-            </Button>
-          </Badge>,
-        ]}
+        extra={[<CheckoutButton key="1"/>]}
       />
       <div className="ant-layout-header" />
     </>

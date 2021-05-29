@@ -1,6 +1,6 @@
 export const styled = {
   footer: {
-    'text-align': "center",
+    textAlign: "center" as "center",
     fontSize: 16
   }
 }

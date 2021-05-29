@@ -8,9 +8,14 @@ const { Content } = Layout;
 type Props = {};
 const HomeView: React.FC<Props> = () => {
   return (
-    <Content style={styled.content}>
-      <ProductList />
-    </Content>
+    <Layout
+      className="site-layout-background"
+      style={styled.layout}
+    >
+      <Content style={styled.content}>
+        <ProductList />
+      </Content>
+    </Layout>
   );
 };
 
