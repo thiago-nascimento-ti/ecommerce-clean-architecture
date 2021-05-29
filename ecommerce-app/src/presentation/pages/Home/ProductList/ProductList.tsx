@@ -28,7 +28,8 @@ const ProductList: React.FC<RouterProps> = ({ history }) => {
   }
 
   const onPressProduct = ({ id, name }: TProduct) => {
-    history.push(routes.product(String(id), name))
+    const formattedName = name.replaceAll(" ", "-").toLocaleLowerCase();
+    history.push(routes.product(String(id), formattedName))
   };
 
   const onAddToCart = (product: TProduct) => {

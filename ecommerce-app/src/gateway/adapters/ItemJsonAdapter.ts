@@ -1,7 +1,6 @@
 import { IItem, TItem } from "../../domain/entities";
 
 export class ItemJsonAdapter {
-
   fromJson(item :IItem): TItem {
     return new TItem(item.product, item.amount); 
   }

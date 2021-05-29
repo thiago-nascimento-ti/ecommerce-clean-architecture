@@ -1,12 +1,13 @@
 import React from "react";
 import { Layout } from "antd";
+import { styled } from "./CartStyled";
 
 const { Content } = Layout;
 
 type Props = {};
 const CartView: React.FC<Props> = () => {
   return (
-    <Content style={{ padding: "0 24px", minHeight: 280 }}>
+    <Content style={styled.content}>
       cart
     </Content>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button, Rate } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { TProduct } from "../../../domain/entities";
+import { styled } from "./ProductCardStyled";
 
 const { Meta } = Card;
 
@@ -15,7 +16,7 @@ const ProductView: React.FC<Props> = ({ product, onPressProduct, onAddToCart }) 
     <>
       <Card
         hoverable
-        style={{ width: 325 }}
+        style={styled.card}
         cover={<img alt={product.name} src={product.image} />}
         onClick={() => onPressProduct(product)}
       >
@@ -34,7 +35,7 @@ const ProductView: React.FC<Props> = ({ product, onPressProduct, onAddToCart }) 
             onAddToCart(product);
             e.stopPropagation();
           }}
-          style={{ marginTop: "25px" }}
+          style={styled.button}
           block
           icon={<ShoppingCartOutlined />}
         >

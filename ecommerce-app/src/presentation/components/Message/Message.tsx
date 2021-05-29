@@ -1,4 +1,5 @@
 import { Modal, notification } from "antd";
+import { styled } from "./MessageStyled";
 
 type TMessage = {
   title: string
@@ -18,6 +19,6 @@ export const showSuccessNotification = ({ title, content}: TMessage) => {
     message: title,
     description: content,
     placement: "topRight",
-    style: {top: 70}
+    style: styled.notification
   })
 }

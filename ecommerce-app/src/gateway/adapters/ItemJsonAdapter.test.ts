@@ -2,10 +2,10 @@ import { IItem, TItem, TProduct } from "../../domain/entities";
 import { ItemJsonAdapter } from "./ItemJsonAdapter";
 
 describe('Item Json Adapter tests', () => {
+  const product: TProduct = {id: 1, name: `teste`, description: "", price: 10, image: "", rate: 3, maxParcelas: 1}
+  
   it('should convert TItem to Json', () => {
-    const product: TProduct = {id: 1, name: `teste`, description: "", price: 10, image: "", rate: 3}
     const item: TItem = new TItem(product, 1)
-    
     const result: IItem = new ItemJsonAdapter().toJson(item);
 
     expect(result.product.id).toBe(item.product.id)
@@ -14,7 +14,6 @@ describe('Item Json Adapter tests', () => {
   });
 
   it('should convert Json to TItem', () => {
-    const product: TProduct = {id: 1, name: `teste`, description: "", price: 10, image: "", rate: 3}
     const item: IItem = {
       product,
       amount: 2

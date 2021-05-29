@@ -5,7 +5,7 @@ describe('Cart Json Adapter tests', () => {
   it('should convert TCart to Json', () => {
     const cart: TCart = new TCart();
     for (let index = 0; index < 2; index++) {
-      const product: TProduct = {id: index, name: `teste ${index}`, description: "", price: 10, image: "", rate: 3}
+      const product: TProduct = {id: index, name: `teste ${index}`, description: "", price: 10, image: "", rate: 3, maxParcelas: 1}
       cart.add(product, 1);
     }
     
@@ -25,7 +25,7 @@ describe('Cart Json Adapter tests', () => {
       amount: 2
     };
     for (let index = 0; index < 2; index++) {
-      const product: TProduct = {id: index, name: `teste ${index}`, description: "", price: 10, image: "", rate: 3}
+      const product: TProduct = {id: index, name: `teste ${index}`, description: "", price: 10, image: "", rate: 3, maxParcelas: 1}
       cart.items.push({product, amount: 1})
     }
     
