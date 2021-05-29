@@ -1,0 +1,26 @@
+import React from "react";
+import { Row, Col } from "antd";
+import { TProduct } from "../../../../domain/entities";
+import { styled } from "./ProductDetailStyled";
+
+type Props = {
+  product: TProduct
+};
+const ProductDetailView: React.FC<Props> = ({ product }) => { 
+  return (
+    <Col span={13} style={styled.colLeft}>
+      <Row justify="center">
+        <Col span={12} style={styled.colLeft}>
+          <img style={styled.img} alt={product.name} src={product.image}  />
+        </Col>
+        <Col span={12} style={styled.colLeft}>
+          <h2>{product.name}</h2>
+          <p>({product.id})</p>
+          <p>{product.description}</p>
+        </Col>
+      </Row>
+    </Col>
+  )
+} 
+
+export default ProductDetailView;

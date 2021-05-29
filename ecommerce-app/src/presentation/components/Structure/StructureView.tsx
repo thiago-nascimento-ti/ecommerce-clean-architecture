@@ -12,7 +12,7 @@ type Props = {
 };
 const StructureView: React.FC<Props> = ({ children }) => {
   return (
-    <Layout>
+    <Layout style={styled.layout}>
       <Header />
       <Content style={styled.content}>
         <>
