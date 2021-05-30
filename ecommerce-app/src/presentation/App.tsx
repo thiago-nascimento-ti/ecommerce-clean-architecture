@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Home, Cart, Product } from "./pages";
+import { Home, Cart, Product, Checkout } from "./pages";
 import { Router } from "./pages/Router";
 import useRoutes from "./hooks/useRoutes";
 import { store } from './app/store';
@@ -13,7 +13,8 @@ const App: React.FC<Props> = () => {
         <Router routes={[
           {path: routes.product(":id", ":name").location, Component: Product},
           {path: routes.cart().location, Component: Cart},
-          {path: routes.home().location, Component: Home},
+          {path: routes.checkout().location, Component: Checkout},
+          {path: routes.home().location, Component: Home}
         ]}/>
     </Provider>
   );

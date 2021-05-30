@@ -1,9 +1,4 @@
 export const styled = {
-  col: {
-    padding: 20,
-    background: "white",
-    textAlign: "center" as "center",
-  },
   title: {
     textAlign: "left" as "left",
     padding: "20px 0px",

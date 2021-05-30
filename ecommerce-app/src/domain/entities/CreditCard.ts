@@ -1,5 +1,7 @@
 export type TCreditCard = {
-  number: string
-  cvv: string
+  cardNumber: string
+  name: string
   validateDate: string
+  cvv: string
+  parcelAmount: number
 }

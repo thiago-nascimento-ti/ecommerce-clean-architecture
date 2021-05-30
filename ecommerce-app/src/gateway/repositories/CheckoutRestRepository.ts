@@ -19,7 +19,7 @@ export class CheckoutRestRepository implements ICheckoutRepository {
     };
     const response = await this.httpClient.post<Array<TProduct>>(params);
 
-    if (response.status === 200) {
+    if (response.status === 201) {
       return Promise.resolve({
         status: CheckoutStatus.Successful, 
         itemsWithInsuficientStock: []

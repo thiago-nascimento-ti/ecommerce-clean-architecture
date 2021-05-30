@@ -1,5 +1,4 @@
 import React from "react";
-import { format } from "util";
 
 type Props = {
   value: number,

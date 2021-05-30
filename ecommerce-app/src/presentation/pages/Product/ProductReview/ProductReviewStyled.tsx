@@ -1,11 +1,4 @@
 export const styled = {
-  col: {
-    paddingTop: 100,
-    marginLeft: 10, 
-    background: "white",
-    textAlign: "center" as "center",
-	  justifyContent: "center", 
-  },
   price: {
     padding: 20,
     fontSize: 35,
@@ -13,6 +6,7 @@ export const styled = {
     marginBottom: 0
   },
   button: {
+    width: "100%",
     marginTop: 50,
     fontSize: 24,
     height: 60,

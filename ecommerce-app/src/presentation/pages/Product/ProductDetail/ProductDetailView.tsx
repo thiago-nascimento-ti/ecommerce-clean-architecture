@@ -8,7 +8,7 @@ type Props = {
 };
 const ProductDetailView: React.FC<Props> = ({ product }) => { 
   return (
-    <Col span={13} style={styled.col}>
+    <>
       <Row justify="center">
         <Col span={12} style={styled.col}>
           <img style={styled.img} alt={product.name} src={product.image}  />
@@ -19,7 +19,7 @@ const ProductDetailView: React.FC<Props> = ({ product }) => {
           <p>{product.description}</p>
         </Col>
       </Row>
-    </Col>
+    </>
   )
 } 
 

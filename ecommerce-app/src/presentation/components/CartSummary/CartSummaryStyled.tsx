@@ -11,13 +11,6 @@ export const styled = {
     fontSize: 15,
     color: "rgba(0, 0, 0, 0.45)"
   },
-  button: {
-    width: "100%",
-    marginTop: 25,
-    fontSize: 24,
-    height: 60,
-    padding: "9.6px 22.5px"
-  },
   basicPrice: {
     fontSize: "18px",
     color: "rgba(0, 0, 0, 0.45)"

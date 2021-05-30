@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICart, TCart, TProduct } from '../../../domain/entities'
-import { InsuficientItemStockError } from "../../../domain/usecases";
+import { ICart, TCart, TCreditCard, TProduct } from '../../../domain/entities'
+import { InsuficientItemStockError, InvalidCardError, InsuficientStockError } from "../../../domain/usecases";
 import { RootState, AppThunk } from '../store';
 import { Factory } from "../../../gateway/factory";
 
@@ -18,6 +18,7 @@ type TCartAction = {
 const adapter = Factory.createCartJsonAdapter();
 const addProductOnCartUseCase = Factory.createAddProductOnCartUseCase(); 
 const subtractProductOfCartUseCase = Factory.createSubtractProductOfCartUseCase(); 
+const ConfirmCheckoutUseCase = Factory.createConfirmCheckoutUseCase(); 
 
 export const slice = createSlice({
   name: 'cart',
@@ -60,6 +61,32 @@ export const increment = (
     }
   }
 };
+
+export const checkout = (
+  creditCard: TCreditCard,
+  onResolve: () => void,
+  onInvalidCreditCard: (error: InvalidCardError) => void,
+  onInsuficientStock: (error: InsuficientStockError) => void,
+): AppThunk => async (
+  dispatch,
+  getState
+) => {
+  const currentState = selectCart(getState());
+  const cart: TCart = adapter.fromJson(currentState);
+
+  try {
+    await ConfirmCheckoutUseCase.execute(cart, creditCard);
+    dispatch(updateCart(initialState))
+    onResolve();
+  } catch(error) {
+    if (error instanceof InvalidCardError) {
+      onInvalidCreditCard(error)
+    } else if (error instanceof InsuficientStockError) {
+      onInsuficientStock(error)
+    }
+  } 
+};
+
 export const selectCart = (state: RootState) => state.cart;
 
 export const { decrement } = slice.actions;;

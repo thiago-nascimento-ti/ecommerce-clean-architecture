@@ -6,11 +6,22 @@ type TMessage = {
   content: string
 }
 
-export const showErrorModal = ({ title, content}: TMessage) => {
+export const showErrorModal = ({ title, content}: TMessage, onOk: () => void = () => {}) => {
   Modal.error({
     title,
     content,
-    okText: "confirmar"
+    okText: "confirmar",
+    afterClose: onOk
+  });
+}
+
+
+export const showSuccessModal = ({ title, content}: TMessage, onOk: () => void = () => {}) => {
+  Modal.success({
+    title,
+    content,
+    okText: "confirmar",
+    afterClose: onOk
   });
 }
 

@@ -1,16 +1,18 @@
 import React from "react";
 import { TProduct } from "../../../../domain/entities";
 import { InsuficientItemStockError } from "../../../../domain/usecases";
-import ProductPricesView from "./ProductPricesView";
+import ProductReviewView from "./ProductReviewView";
 import { increment } from '../../../app/slices/cart';
 import { useAppDispatch } from '../../../app/hooks';
 import { showErrorModal, showSuccessNotification } from "../../../components/Message/Message";
+import useRoutes from "../../../hooks/useRoutes";
 
 type Props = {
   product: TProduct
 };
-const Product: React.FC<Props> = ({ product }) => {
+const ProductReview: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
+  const routes = useRoutes();
 
   const showInsuficientItemStockModal = ({title, content}: InsuficientItemStockError) => {
     showErrorModal({title, content});
@@ -26,7 +28,9 @@ const Product: React.FC<Props> = ({ product }) => {
     dispatch(increment({product, amount: 1}, onResolveAddToCart, showInsuficientItemStockModal))
   };
 
-  return <ProductPricesView {...{product, onAddToCart}}/>;
+  const goToHome = routes.home().go;
+
+  return <ProductReviewView {...{product, onAddToCart, goToHome}}/>;
 };
 
-export default Product;
+export default ProductReview;

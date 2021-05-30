@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Button, Input, Empty } from "antd";
+import { Button, Input, Empty } from "antd";
 import { styled } from "./CartDetailStyled";
 import { Table, Image, Space } from 'antd';
 import { brPriceFormat } from "../../../components/BRPrice"
@@ -10,7 +10,7 @@ type Props = {
 };
 const CartDetailView: React.FC<Props> = ({ data, pageSize }) => {
   return (
-    <Col span={13} style={styled.col}>
+    <>
       <p style={styled.title}>Minha Cesta</p>
       <Table 
         columns={columns} 
@@ -20,7 +20,7 @@ const CartDetailView: React.FC<Props> = ({ data, pageSize }) => {
           emptyText: <Empty description="Sua cesta está vazia"/>
         }} 
       />
-    </Col>
+    </>
   );
 };
 

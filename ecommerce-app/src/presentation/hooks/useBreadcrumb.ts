@@ -7,13 +7,22 @@ export default function useBreadcrumb(): Array<TLocation> {
   const locationItems: Array<TLocation> = [];
   addLocationItemToHome(locationItems);
   addLocationItemToProduct(locationItems, location);
-  addLocationToCheckout(locationItems, location);
+  addLocationDefault(locationItems, location, "carrinho");
+  addLocationDefault(locationItems, location, "checkout");
 
   return locationItems;
 }
 
 function addLocationItemToHome(locationItems: Array<TLocation>): void {
   locationItems.push({name: "home", uri: "/"})
+}
+
+function addLocationDefault(locationItems: Array<TLocation>, location: Location, expectedPath: string): void {
+  const locations = location.pathname.split("/");
+  const [,name] = locations
+  if (locations.some((path: string) => path === expectedPath)) {
+    locationItems.push({name: name, uri: location.pathname}) 
+  }
 }
 
 function addLocationItemToProduct(locationItems: Array<TLocation>, location: Location): void {
@@ -24,14 +33,6 @@ function addLocationItemToProduct(locationItems: Array<TLocation>, location: Loc
       name: `produto - ${id}`,
       uri: location.pathname
     })
-  }
-}
-
-function addLocationToCheckout(locationItems: Array<TLocation>, location: Location): void {
-  const locations = location.pathname.split("/");
-  const [,name] = locations
-  if (locations.some((path: string) => path === "carrinho")) {
-    locationItems.push({name: name, uri: location.pathname}) 
   }
 }
 

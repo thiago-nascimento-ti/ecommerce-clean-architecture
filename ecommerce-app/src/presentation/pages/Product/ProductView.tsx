@@ -1,11 +1,8 @@
 import React from "react";
-import { Layout, Row } from "antd";
 import { TProduct } from "../../../domain/entities";
-import { styled } from "./ProductStyled";
-import ProductDetail from './ProductDetail';
-import ProductPrices from './ProductPrices';
-
-const { Content } = Layout;
+import ProductDetail from "./ProductDetail";
+import ProductReview from "./ProductReview";
+import LayoutReview, { Review, Detail } from "../../components/ReviewLayout";
 
 type Props = {
   product: TProduct | null
@@ -16,12 +13,14 @@ const ProductView: React.FC<Props> = ({ product }) => {
   }
   
   return (
-    <Content style={styled.content}>
-      <Row justify="center">
-        <ProductDetail product={product}/>
-        <ProductPrices product={product}/>
-      </Row>
-    </Content>
+    <LayoutReview>
+        <Detail>
+          <ProductDetail product={product}/>
+        </Detail>
+        <Review>
+          <ProductReview product={product}/>
+        </Review>
+    </LayoutReview>
   );
 };
 
