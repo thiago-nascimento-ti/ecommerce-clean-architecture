@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    depends_on:
+      - mongo
+    ports:
+      - 8080:8080
+    env_file: .env
+  mongo:
+    image: mongo:4.4.6
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: ecommerce
+    ports:
+      - 27017:27017
+    command: mongod --logpath=/dev/null

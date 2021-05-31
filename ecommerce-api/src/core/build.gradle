@@ -1,0 +1,10 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    testImplementation "org.mockito:mockito-core:${versionMockito}"
+    testImplementation "org.mockito:mockito-junit-jupiter:${versionMockito}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${versionJUnit}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${versionJUnit}"
+}

@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation project(':core')
+    // Spring Data
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:${versionSpringBoot}"
+    // Test
+    testImplementation "org.mockito:mockito-core:${versionMockito}"
+    testImplementation "org.mockito:mockito-junit-jupiter:${versionMockito}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${versionJUnit}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${versionJUnit}"
+}

@@ -1,0 +1,8 @@
+rootProject.name = 'ecommerce'
+
+def modules = ['adapters', 'core', 'infrastructure']
+
+modules.forEach { module ->
+    include ":${module}"
+    project(":${module}").projectDir = new File(rootProject.projectDir, "${moduleSourcesDir}/${module}")
+}

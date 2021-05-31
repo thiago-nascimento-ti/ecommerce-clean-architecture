@@ -1,0 +1,23 @@
+plugins {
+    id 'application'
+    id 'org.springframework.boot' version "${versionSpringBoot}"
+    id 'io.spring.dependency-management' version "${versionSpringDependencyManager}"
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':adapters')
+    // Spring
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb"
+    implementation "junit:junit:4.12"
+    // Test
+    testImplementation "org.testcontainers:testcontainers:1.15.3"
+    testImplementation "org.testcontainers:junit-jupiter:1.15.3"
+    testImplementation "org.testcontainers:mongodb:1.15.3"
+    testImplementation "com.github.dasniko:testcontainers-keycloak:1.6.1"
+
+    testImplementation 'com.google.code.gson:gson:2.8.6'
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testRuntimeOnly "org.springframework.boot:spring-boot-devtools"
+}
