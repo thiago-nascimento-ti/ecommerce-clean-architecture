@@ -31,22 +31,20 @@ const FormItemView: React.FC<Props> = ({
   const { message } = errors[name] || {};
   const status = message ? "error" : undefined;
   return (
-      <Controller 
-        name={name} 
-        control={control}
-        render={args => (
-          <Form.Item 
-            label={label}
-            validateStatus={status}
-            help={message}
-          >
-            {render(args)}
-          </Form.Item>
-        )}
-      />
-    
+    <Controller 
+      name={name} 
+      control={control}
+      render={args => (
+        <Form.Item 
+          label={label}
+          validateStatus={status}
+          help={message}
+        >
+          {render(args)}
+        </Form.Item>
+      )}
+    />
   )
-
 };
 
 export default FormItemView;

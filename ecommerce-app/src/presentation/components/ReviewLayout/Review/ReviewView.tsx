@@ -7,8 +7,10 @@ type Props = {
 };
 const ReviewView: React.FC<Props> = ({ children }) => {
   return (
-    <Col span={5} style={styled.col}>
-      {children}
+    <Col xs={24} sm={24} xl={10} xxl={6}>
+      <div style={styled.div}>
+        {children}
+      </div>
     </Col>
   );
 };

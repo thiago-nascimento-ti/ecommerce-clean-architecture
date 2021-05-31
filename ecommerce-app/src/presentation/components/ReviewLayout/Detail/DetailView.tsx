@@ -7,8 +7,10 @@ type Props = {
 };
 const DetailView: React.FC<Props> = ({ children }) => {
   return (
-    <Col span={13} style={styled.col}>
-      {children}
+    <Col xs={24} sm={24} xl={14} xxl={13}>
+      <div style={styled.div}>
+        {children}
+      </div>
     </Col>
   );
 };

@@ -10,12 +10,12 @@ const App: React.FC<Props> = () => {
   const routes = useRoutes();
   return (
     <Provider store={store}>
-        <Router routes={[
-          {path: routes.product(":id", ":name").location, Component: Product},
-          {path: routes.cart().location, Component: Cart},
-          {path: routes.checkout().location, Component: Checkout},
-          {path: routes.home().location, Component: Home}
-        ]}/>
+      <Router routes={[
+        {path: routes.product(":id", ":name").location, Component: Product},
+        {path: routes.cart().location, Component: Cart},
+        {path: routes.checkout().location, Component: Checkout},
+        {path: routes.home().location, Component: Home}
+      ]}/>
     </Provider>
   );
 };

@@ -15,7 +15,8 @@ const CartDetailView: React.FC<Props> = ({ data, pageSize }) => {
       <Table 
         columns={columns} 
         dataSource={data} 
-        pagination={{pageSize}}
+        pagination={{pageSize, position: ["bottomCenter"]}}
+        rowKey="name"
         locale={{
           emptyText: <Empty description="Sua cesta está vazia"/>
         }} 
@@ -72,8 +73,8 @@ const columns = [
     key: 'payable',
     width: styled.columns.price.width,
     align: "center" as "center",
-    render: (value: number) => {
-      return <p style={styled.price}>{brPriceFormat(value)}</p>
-    }
+    render: (value: number) => (
+      <p style={styled.price}>{brPriceFormat(value)}</p>
+    )
   }
 ]

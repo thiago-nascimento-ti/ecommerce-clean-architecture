@@ -13,7 +13,7 @@ import { showErrorModal, showSuccessModal } from "../../../components/Message/Me
 const requiredText = "Esse campo é obrigatório";
 const creditCardMinMaxText = "O número do cartão deve conter 16 dígitos";
 const nameLengthText = "O máximo de caracteres é 200";
-const ccvMinMaxText = "O CCV deve conter 3 dígitos";
+const ccvMinMaxText = "O CVV deve conter 3 dígitos";
 
 const schema: Yup.SchemaOf<TFormData> = Yup.object().shape({
   cardNumber: Yup
@@ -23,11 +23,11 @@ const schema: Yup.SchemaOf<TFormData> = Yup.object().shape({
     .max(16, creditCardMinMaxText)
     .transform(value => (
       value ? value.replace(/[^0-9]/gi, "") : ""
-    )).default("1234567890123456"),
+    )),
   name: Yup
     .string()
     .required(requiredText)
-    .max(200, nameLengthText).default("Thiago"),
+    .max(200, nameLengthText),
   validateDate: Yup
     .string()
     .typeError(requiredText)
@@ -36,7 +36,7 @@ const schema: Yup.SchemaOf<TFormData> = Yup.object().shape({
     .string()
     .required(requiredText)
     .min(3, ccvMinMaxText)
-    .max(3, ccvMinMaxText).default("123")
+    .max(3, ccvMinMaxText)
     .transform(value => value ? value : ""),
   parcelAmount: Yup
     .number()

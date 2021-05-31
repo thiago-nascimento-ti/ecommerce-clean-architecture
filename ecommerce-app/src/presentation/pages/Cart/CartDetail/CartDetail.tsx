@@ -13,45 +13,48 @@ const CartDetail: React.FC<Props> = ({ cart }) => {
   const dispatch = useAppDispatch();
   const pageSize = 4;
 
-  const data: Array<TRecord> = cart.items.map(({amount, product}) => {
-    const { name, price, image } = product;
-
-    const onAmountChange = (value: string) => {
-      const newAmount = toValidInt(value);
-      if (newAmount === 0) {
-        return 
+  const createData = () => (
+    cart.items.map(({amount, product}) => {
+      const { name, price, image } = product;
+  
+      const onAmountChange = (value: string) => {
+        const newAmount = toValidInt(value);
+        if (newAmount === 0) {
+          return 
+        }
+        if (isIncrementExpression(newAmount, amount)) {
+          onIncrement(newAmount - amount)
+        } else {
+          onDecrement(amount - newAmount)
+        }
       }
-      if (isIncrementExpression(newAmount, amount)) {
-        onIncrement(newAmount - amount)
-      } else {
-        onDecrement(amount - newAmount)
+  
+      const onIncrement = (amount: number = 1) => {
+        dispatch(increment({product, amount}, () => {}, showInsuficientItemStockModal))
       }
-    }
+  
+      const onDecrement = (amount: number = 1) => {
+        dispatch(decrement({product, amount}))
+      }
+  
+      const onRemove = () => {
+        dispatch(decrement({product, amount}))
+      }
+  
+      return {
+        image, 
+        name,
+        amount,
+        payable: price * amount,
+        onDecrement,
+        onIncrement,
+        onAmountChange,
+        onRemove
+      }
+    })
+  )
 
-    const onIncrement = (amount: number = 1) => {
-      dispatch(increment({product, amount}, () => {}, showInsuficientItemStockModal))
-    }
-
-    const onDecrement = (amount: number = 1) => {
-      dispatch(decrement({product, amount}))
-    }
-
-    const onRemove = () => {
-      dispatch(decrement({product, amount}))
-    }
-
-    return {
-      image, 
-      name,
-      amount,
-      payable: price * amount,
-      onDecrement,
-      onIncrement,
-      onAmountChange,
-      onRemove
-    }
-  })
-
+  const data: Array<TRecord> = createData();
   return <CartDetailView {...{data, pageSize}}/>;
 };
 

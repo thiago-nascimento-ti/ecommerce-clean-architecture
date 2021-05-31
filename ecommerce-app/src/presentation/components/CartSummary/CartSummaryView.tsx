@@ -2,6 +2,7 @@ import React from "react";
 import { ICart } from '../../../domain/entities';
 import { styled } from "./CartSummaryStyled";
 import InlinePrice from "../InlinePrice";
+import { Divider } from 'antd';
 
 type Props = {
   cart: ICart
@@ -26,6 +27,7 @@ const CartSummaryView: React.FC<Props> = ({ cart, maxParcels }) => {
         label="Frete" 
         price={0}
       />
+      <Divider style={styled.divider} orientation="left"/>
       <InlinePrice 
         color={finalPrice.color}
         fontSize={finalPrice.fontSize}

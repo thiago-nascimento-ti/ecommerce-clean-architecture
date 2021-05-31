@@ -1,5 +1,4 @@
 import { Modal, notification } from "antd";
-import { styled } from "./MessageStyled";
 
 type TMessage = {
   title: string
@@ -15,7 +14,6 @@ export const showErrorModal = ({ title, content}: TMessage, onOk: () => void = (
   });
 }
 
-
 export const showSuccessModal = ({ title, content}: TMessage, onOk: () => void = () => {}) => {
   Modal.success({
     title,
@@ -27,9 +25,10 @@ export const showSuccessModal = ({ title, content}: TMessage, onOk: () => void =
 
 export const showSuccessNotification = ({ title, content}: TMessage) => {
   notification.success({
+    top: 70,
+    duration: 3.5,
     message: title,
     description: content,
     placement: "topRight",
-    style: styled.notification
   })
 }

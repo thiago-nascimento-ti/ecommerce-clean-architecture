@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Select, Row, Col, DatePicker, InputNumber, Button } from "antd";
+import { Input, Select, Row, Col, DatePicker, InputNumber, Button, Form } from "antd";
 import { styled } from "./CheckoutDetailStyled";
 import { Control, DeepMap, FieldError } from "react-hook-form";
 import FormItem from "../../../components/FormItem";
@@ -23,10 +23,11 @@ const CheckoutDetailView: React.FC<Props> = ({
   onSubmit,
   control,
   errors
-}) => {
-  return (
-    <Row justify="center">
-      <Col span={12} >
+}) => (
+  <Row justify="center">
+    <Col xs={24} md={12}>
+      <p style={styled.title}>Forma de pagamento</p>
+      <Form layout="vertical">
         <FormItem 
           label="Número do cartão"
           name="cardNumber" 
@@ -123,10 +124,10 @@ const CheckoutDetailView: React.FC<Props> = ({
         <Button onClick={onSubmit} style={styled.button} type="primary">
             Fechar pedido
         </Button>
-      </Col>
-    </Row>
-  );
-};
+      </Form>
+    </Col>
+  </Row>
+)
 
 export type TFormData = {
   cardNumber: any

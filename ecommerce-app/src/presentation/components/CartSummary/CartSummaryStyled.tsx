@@ -23,5 +23,8 @@ export const styled = {
     fontSize: "20px",
     color: "black",
     fontWeight: 600,
+  },
+  divider: {
+    margin: "5px 0"
   }
 }

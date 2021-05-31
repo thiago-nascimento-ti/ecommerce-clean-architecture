@@ -22,10 +22,11 @@ const ConfirmCheckoutUseCase = Factory.createConfirmCheckoutUseCase();
 
 export const slice = createSlice({
   name: 'cart',
-  initialState,
+  initialState: getFromLocalStorageOrInitialState(),
   reducers: {
     updateCart: (state, action: PayloadAction<ICart>) => {
       const newState = action.payload;
+      saveToLocalStorage(newState);
       return newState;
     },
     decrement: (state, action: PayloadAction<TCartAction>) => {
@@ -33,7 +34,9 @@ export const slice = createSlice({
 
       const cart: TCart = adapter.fromJson(state);
       subtractProductOfCartUseCase.execute(cart, product, amount);
-      return adapter.toJson(cart);
+      const newState = adapter.toJson(cart);
+      saveToLocalStorage(newState)
+      return newState;
     }
   }
 });
@@ -91,3 +94,16 @@ export const selectCart = (state: RootState) => state.cart;
 
 export const { decrement } = slice.actions;;
 export default slice.reducer;
+
+function getFromLocalStorageOrInitialState() {
+  const state = localStorage.getItem('cart');
+  if (state) {
+    return JSON.parse(state);
+  }
+  return initialState;
+}
+
+function saveToLocalStorage(cart: ICart) {
+  const state = JSON.stringify(cart);
+  localStorage.setItem('cart', state);
+}

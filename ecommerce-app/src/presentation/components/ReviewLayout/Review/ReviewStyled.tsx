@@ -1,8 +1,7 @@
 export const styled = {
-  col: {
+  div: {
     padding: 20,
     background: "white",
-    textAlign: "center" as "center",
-    marginLeft: 10
+    textAlign: "center" as "center"
   }
 }

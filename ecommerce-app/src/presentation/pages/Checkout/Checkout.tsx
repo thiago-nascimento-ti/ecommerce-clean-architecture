@@ -8,7 +8,6 @@ type Props = {};
 const Checkout: React.FC<Props> = () => {
   const cart = useAppSelector(selectCart);
   const routes = useRoutes();
-
   if (cart.amount === 0) {
     routes.home().go();
   }

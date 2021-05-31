@@ -10,7 +10,7 @@ type Props = {
 const ReviewLayoutView: React.FC<Props> = ({ children }) => {
   return (
     <Content style={styled.content}>
-      <Row justify="center">
+      <Row gutter={[10, 10]} justify="center">
         {children}
       </Row>
     </Content>

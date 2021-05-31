@@ -1,4 +1,3 @@
-
 export const styled = {
   div: {
     display: "flex" as "flex",
