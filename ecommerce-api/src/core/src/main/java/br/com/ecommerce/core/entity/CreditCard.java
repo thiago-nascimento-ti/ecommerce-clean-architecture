@@ -16,7 +16,8 @@ public class CreditCard {
     this(cardNumber, name, null, null, parcelAmount);
   }
 
-  public CreditCard(String cardNumber, String name, String validateDate, String cvv, int parcelAmount) {
+  public CreditCard(String cardNumber, String name, String validateDate, String cvv,
+      int parcelAmount) {
     this.cardNumber = cardNumber;
     this.name = name;
     this.validateDate = validateDate;
@@ -51,7 +52,7 @@ public class CreditCard {
     if (!isCvvValid()) {
       throw new CreditCardInvalidException("Credit card cvv is not valid.");
     }
-    if(!isValidateDateValid()) {
+    if (!isValidateDateValid()) {
       throw new CreditCardInvalidException("Credit card validate date is not valid.");
     }
   }
@@ -83,7 +84,7 @@ public class CreditCard {
   }
 
   protected LocalDateTime getLocalDateTimeFromValidateDate() {
-    String value = (validateDate+"/15T00:00")
+    String value = (validateDate + "/15T00:00")
         .replaceAll("/", "-");
     return LocalDateTime.parse(value);
   }

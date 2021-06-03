@@ -32,7 +32,7 @@ public class OutputTestUtils {
 
   public static OrderItem buildOrderItem() {
     int amount = 5;
-    Product product = buildProduct( null, null, null);
+    Product product = buildProduct(null, null, null);
     return new OrderItem(product, amount);
   }
 

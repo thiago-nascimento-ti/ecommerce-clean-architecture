@@ -1,7 +1,7 @@
 package br.com.ecommerce.infrastructure.api;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -55,7 +55,6 @@ public class ProductResourceTest extends MongoContainer {
       throws Exception {
     long code = 5727542951L;
     CreateProductInputData inputData = buildCreateProductInputData(code);
-    ProductOutputData outputData = convertToProductOutputData(inputData);
 
     mvc.perform(post("/v1/products")
         .content(gson.toJson(inputData))
@@ -90,7 +89,7 @@ public class ProductResourceTest extends MongoContainer {
 
     service.save(inputData.toEntity());
 
-    mvc.perform(get("/v1/products/"+code))
+    mvc.perform(get("/v1/products/" + code))
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -101,9 +100,8 @@ public class ProductResourceTest extends MongoContainer {
   public void shouldReturnNotFoundWhenFindByCodeAndProductDoesNotExists()
       throws Exception {
     long code = 5727542951L;
-    CreateProductInputData inputData = buildCreateProductInputData(code);
 
-    mvc.perform(get("/v1/products/"+code))
+    mvc.perform(get("/v1/products/" + code))
         .andExpect(status().isNotFound())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -132,7 +130,7 @@ public class ProductResourceTest extends MongoContainer {
     int limit = 2;
     Paged<ProductOutputData> paged = preparePagedOutputData(page, limit);
 
-    mvc.perform(get("/v1/products?_limit="+limit+"&_page="+page))
+    mvc.perform(get("/v1/products?_limit=" + limit + "&_page=" + page))
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -148,7 +146,7 @@ public class ProductResourceTest extends MongoContainer {
     int limit = 2;
     Paged<ProductOutputData> paged = preparePagedOutputData(page, limit);
 
-    mvc.perform(get("/v1/products?_limit="+limit+"&_page="+page))
+    mvc.perform(get("/v1/products?_limit=" + limit + "&_page=" + page))
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -157,7 +155,6 @@ public class ProductResourceTest extends MongoContainer {
             .json(gson.toJson(paged.getItems()), false));
   }
 
-
   @Test
   public void shouldReturnOkAndReturnThirdPage()
       throws Exception {
@@ -165,7 +162,7 @@ public class ProductResourceTest extends MongoContainer {
     int limit = 2;
     Paged<ProductOutputData> paged = preparePagedOutputData(page, limit);
 
-    mvc.perform(get("/v1/products?_limit="+limit+"&_page="+page))
+    mvc.perform(get("/v1/products?_limit=" + limit + "&_page=" + page))
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -195,7 +192,7 @@ public class ProductResourceTest extends MongoContainer {
         .map(this::convertToProductOutputData)
         .collect(Collectors.toList());
 
-    return new Paged(outputData, inputDataList.size());
+    return new Paged<>(outputData, inputDataList.size());
   }
 
   private ProductOutputData convertToProductOutputData(CreateProductInputData inputData) {
@@ -218,7 +215,7 @@ public class ProductResourceTest extends MongoContainer {
   }
 
   private String expectedError(String content) {
-    return "{\"message\":\""+content+"\"}";
+    return "{\"message\":\"" + content + "\"}";
   }
 
 }

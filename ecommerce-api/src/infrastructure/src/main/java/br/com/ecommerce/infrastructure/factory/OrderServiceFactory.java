@@ -25,10 +25,13 @@ public class OrderServiceFactory {
 
   @Bean
   @Autowired
-  public OrderService createOrderService(OrderRepository repository, ProductRepository productRepository) {
-    SubtractProductStockUseCase subtractProductStockUseCase = new SubtractProductStockUseCase(productRepository);
+  public OrderService createOrderService(OrderRepository repository,
+      ProductRepository productRepository) {
+    SubtractProductStockUseCase subtractProductStockUseCase = new SubtractProductStockUseCase(
+        productRepository);
     FindOrderByIdUseCase findOrderByIdUseCase = new FindOrderByIdUseCase(repository);
-    CreateOrderUseCase saveOrderUseCase = new CreateOrderUseCase(repository, subtractProductStockUseCase, findOrderByIdUseCase);
+    CreateOrderUseCase saveOrderUseCase = new CreateOrderUseCase(repository,
+        subtractProductStockUseCase, findOrderByIdUseCase);
 
     return new OrderService(saveOrderUseCase, findOrderByIdUseCase);
   }

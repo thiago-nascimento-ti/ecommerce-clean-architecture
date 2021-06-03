@@ -20,7 +20,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class SaveOrderUseCaseTest {
+public class CreateOrderUseCaseTest {
 
   @Mock
   private OrderRepository repository;
@@ -37,12 +37,14 @@ public class SaveOrderUseCaseTest {
     long code = 1123123123L;
     int amount = 3;
     OrderItem item = new OrderItem(TestUtils.buildProduct(code), amount);
-    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2018/10", "111");
+    CreditCard creditCard = TestUtils.buildCreditCard(
+        "1111111111111111", "2018/10", "111");
     Order order = Mockito.spy(TestUtils.buildOrder(Arrays.asList(item), creditCard));
     Order expectedOrder = TestUtils.buildOrder(id, Arrays.asList(item), creditCard);
 
     Mockito.doNothing().when(order).validate();
-    Mockito.doThrow(new NotFoundException("Order not found")).when(findOrderByIdUseCase).execute(id);
+    Mockito.doThrow(new NotFoundException("Order not found")).when(findOrderByIdUseCase)
+        .execute(id);
     Mockito.doReturn(expectedOrder).when(repository).create(order);
 
     Order result = useCase.execute(order, id);
@@ -87,13 +89,17 @@ public class SaveOrderUseCaseTest {
     Mockito.doThrow(new InsufficientProductStockException(code))
         .when(subtractProductStockUseCase)
         .execute(code, amount);
-    Mockito.doThrow(new NotFoundException("Order not found")).when(findOrderByIdUseCase).execute(id);
+    Mockito.doThrow(new NotFoundException("Order not found")).when(findOrderByIdUseCase)
+        .execute(id);
 
-    InsufficientStockException exception = Assertions.assertThrows(InsufficientStockException.class, () -> {
-      useCase.execute(order, id);
-    });
+    InsufficientStockException exception = Assertions
+        .assertThrows(InsufficientStockException.class, () -> {
+          useCase.execute(order, id);
+        });
 
-    Assertions.assertEquals("Some products does not have enough stock to process the order.", exception.getMessage());
+    Assertions.assertEquals(
+        "Some products does not have enough stock to process the order.",
+        exception.getMessage());
     Mockito.verify(findOrderByIdUseCase).execute(id);
     Mockito.verify(repository, Mockito.never()).create(order);
     Mockito.verify(subtractProductStockUseCase).execute(code, amount);
@@ -102,7 +108,7 @@ public class SaveOrderUseCaseTest {
   }
 
   @Test
-  public void shouldThrowInsufficientStockExceptionWhenTwoProductDoesNotHaveEnoughStockAndReturnAllCodes() {
+  public void shouldThrowInsufficientStockExceptionWhenTwoProductDoesNotHaveEnoughStock() {
     UUID id = UUID.randomUUID();
     long code1 = 1123123123L;
     int amount1 = 3;
@@ -118,16 +124,20 @@ public class SaveOrderUseCaseTest {
     Mockito.doThrow(new InsufficientProductStockException(0))
         .when(subtractProductStockUseCase)
         .execute(Mockito.anyLong(), Mockito.anyInt());
-    Mockito.doThrow(new NotFoundException("Order not found")).when(findOrderByIdUseCase).execute(id);
+    Mockito.doThrow(new NotFoundException("Order not found")).when(findOrderByIdUseCase)
+        .execute(id);
 
-    InsufficientStockException exception = Assertions.assertThrows(InsufficientStockException.class, () -> {
-      useCase.execute(order, id);
-    });
+    InsufficientStockException exception = Assertions
+        .assertThrows(InsufficientStockException.class, () -> {
+          useCase.execute(order, id);
+        });
 
-    Assertions.assertEquals("Some products does not have enough stock to process the order.", exception.getMessage());
+    Assertions.assertEquals("Some products does not have enough stock to process the order.",
+        exception.getMessage());
     Mockito.verify(findOrderByIdUseCase).execute(id);
     Mockito.verify(repository, Mockito.never()).create(order);
-    Mockito.verify(subtractProductStockUseCase, Mockito.times(2)).execute(Mockito.anyLong(), Mockito.anyInt());
+    Mockito.verify(subtractProductStockUseCase, Mockito.times(2))
+        .execute(Mockito.anyLong(), Mockito.anyInt());
     Assertions.assertEquals(2, exception.getProductsCodeWithoutStock().size());
     Assertions.assertEquals(code1, exception.getProductsCodeWithoutStock().get(0));
     Assertions.assertEquals(code2, exception.getProductsCodeWithoutStock().get(1));

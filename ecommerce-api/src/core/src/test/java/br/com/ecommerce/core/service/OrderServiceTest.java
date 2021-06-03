@@ -34,7 +34,8 @@ public class OrderServiceTest {
     UUID id = UUID.randomUUID();
     Order expectedOrder = Mockito.spy(TestUtils.buildOrder(id, Arrays.asList(item), creditCard));
 
-    Mockito.doReturn(expectedOrder).when(saveOrderUseCase).execute(Mockito.eq(order), Mockito.any(UUID.class));
+    Mockito.doReturn(expectedOrder).when(saveOrderUseCase)
+        .execute(Mockito.eq(order), Mockito.any(UUID.class));
 
     Order result = service.create(order);
 

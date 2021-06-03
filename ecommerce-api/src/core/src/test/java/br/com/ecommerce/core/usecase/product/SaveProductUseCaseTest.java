@@ -4,7 +4,6 @@ import br.com.ecommerce.core.TestUtils;
 import br.com.ecommerce.core.entity.Product;
 import br.com.ecommerce.core.exception.DuplicatedException;
 import br.com.ecommerce.core.repository.ProductRepository;
-import br.com.ecommerce.core.usecase.product.SaveProductUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

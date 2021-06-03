@@ -5,13 +5,15 @@ import java.util.List;
 import java.util.UUID;
 
 public class Order {
+
   private UUID id;
   private final List<OrderItem> items;
   private final int itemsAmount;
   private final double payable;
   private final CreditCard creditCard;
 
-  public Order(UUID id, List<OrderItem> items, int itemsAmount, double payable, CreditCard creditCard) {
+  public Order(UUID id, List<OrderItem> items, int itemsAmount, double payable,
+      CreditCard creditCard) {
     this(items, itemsAmount, payable, creditCard);
     this.id = id;
   }

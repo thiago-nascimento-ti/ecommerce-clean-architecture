@@ -3,7 +3,6 @@ package br.com.ecommerce.infrastructure.api;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import br.com.ecommerce.adapters.mapper.order.CreateOrderInputData;
@@ -12,10 +11,7 @@ import br.com.ecommerce.adapters.mapper.order.OrderItemInputData;
 import br.com.ecommerce.adapters.mapper.order.OrderOutputData;
 import br.com.ecommerce.adapters.mapper.order.ProductInputData;
 import br.com.ecommerce.adapters.mapper.product.CreateProductInputData;
-import br.com.ecommerce.adapters.mapper.product.ProductOutputData;
 import br.com.ecommerce.core.entity.Order;
-import br.com.ecommerce.core.entity.OrderItem;
-import br.com.ecommerce.core.entity.Paged;
 import br.com.ecommerce.core.entity.Product;
 import br.com.ecommerce.core.exception.InsufficientStockException;
 import br.com.ecommerce.core.service.OrderService;
@@ -30,8 +26,6 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.mockito.Spy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -77,7 +71,8 @@ public class OrderResourceTest extends MongoContainer {
         .stream()
         .map(this::buildOrderItemInputData)
         .collect(Collectors.toList());
-    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items, creditCardInputData);
+    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items,
+        creditCardInputData);
 
     mvc.perform(post("/v1/orders")
         .content(gson.toJson(createOrderInputData))
@@ -95,14 +90,15 @@ public class OrderResourceTest extends MongoContainer {
         .stream()
         .map(this::buildOrderItemInputData)
         .collect(Collectors.toList());
-    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items, creditCardInputData);
+    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items,
+        creditCardInputData);
 
     Order order = createOrderInputData.toEntity();
     UUID id = orderService.create(order).getId();
     OrderOutputData expectedBody = new OrderOutputData().fromEntity(order);
     expectedBody.getCreditCard().setHash("662147282");
 
-    mvc.perform(get("/v1/orders/"+id))
+    mvc.perform(get("/v1/orders/" + id))
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
@@ -119,7 +115,8 @@ public class OrderResourceTest extends MongoContainer {
         .stream()
         .map(this::buildOrderItemInputData)
         .collect(Collectors.toList());
-    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items, creditCardInputData);
+    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items,
+        creditCardInputData);
 
     mvc.perform(post("/v1/orders")
         .content(gson.toJson(createOrderInputData))
@@ -137,9 +134,10 @@ public class OrderResourceTest extends MongoContainer {
         .stream()
         .map(item -> buildOrderItemInputData(10, item))
         .collect(Collectors.toList());
-    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items, creditCardInputData);
+    CreateOrderInputData createOrderInputData = buildCreateOrderInputData(items,
+        creditCardInputData);
 
-    List<Long> insufficientStockCodes =createdProducts
+    List<Long> insufficientStockCodes = createdProducts
         .stream()
         .mapToLong(CreateProductInputData::getId)
         .boxed()
@@ -157,7 +155,8 @@ public class OrderResourceTest extends MongoContainer {
             .json(gson.toJson(expectedBody), false));
   }
 
-  private CreateOrderInputData buildCreateOrderInputData(List<OrderItemInputData> items, CreditCardInputData creditCardInputData) {
+  private CreateOrderInputData buildCreateOrderInputData(List<OrderItemInputData> items,
+      CreditCardInputData creditCardInputData) {
     CreateOrderInputData createOrderInputData = new CreateOrderInputData();
     createOrderInputData.setCreditCard(creditCardInputData);
     createOrderInputData.setItems(items);
@@ -181,11 +180,13 @@ public class OrderResourceTest extends MongoContainer {
         .reduce(0d, Double::sum);
   }
 
-  private OrderItemInputData buildOrderItemInputData(CreateProductInputData createdProductInputData) {
+  private OrderItemInputData buildOrderItemInputData(
+      CreateProductInputData createdProductInputData) {
     return buildOrderItemInputData(createdProductInputData.getStock(), createdProductInputData);
   }
 
-  private OrderItemInputData buildOrderItemInputData(int amount, CreateProductInputData createdProductInputData) {
+  private OrderItemInputData buildOrderItemInputData(int amount,
+      CreateProductInputData createdProductInputData) {
     Product product = createdProductInputData.toEntity();
 
     ProductInputData productInputData = new ProductInputData();

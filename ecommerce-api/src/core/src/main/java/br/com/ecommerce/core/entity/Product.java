@@ -17,7 +17,8 @@ public class Product {
     this(code, name, description, price, image, null, null, null);
   }
 
-  public Product(long code, String name, String description, double price, String image, Integer rate,
+  public Product(long code, String name, String description, double price, String image,
+      Integer rate,
       Integer maxParcels, Integer stock) {
     this.code = code;
     this.name = name;

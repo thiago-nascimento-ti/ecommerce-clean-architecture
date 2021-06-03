@@ -30,7 +30,7 @@ public class FindAllProductsPagedUseCaseTest {
     Mockito.doReturn(paged).when(repository).findAllPaged(page, itemsPerPage);
     Long[] expectedCodes = {7823159138L, 3163634337L, 7528877106L};
 
-    Paged<Product> pagedResult =useCase.execute(page, itemsPerPage);
+    Paged<Product> pagedResult = useCase.execute(page, itemsPerPage);
 
     Assertions.assertEquals(3, pagedResult.getTotalItems());
     Mockito.verify(repository).findAllPaged(page, itemsPerPage);

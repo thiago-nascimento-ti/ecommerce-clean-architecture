@@ -9,7 +9,6 @@ import br.com.ecommerce.core.usecase.product.SaveProductUseCase;
 import br.com.ecommerce.infrastructure.database.bridge.ProductRepositoryBridge;
 import br.com.ecommerce.infrastructure.database.springdata.ProductMongoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

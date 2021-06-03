@@ -18,10 +18,6 @@ public class InputDataTestUtils {
     return createOrderInputData;
   }
 
-  public static OrderItemInputData buildOrderItemInputData() {
-    return buildOrderItemInputData(1123123123L);
-  }
-
   public static ProductInputData buildProductInputData(long code) {
     ProductInputData productInputData = new ProductInputData();
     productInputData.setId(code);
@@ -43,6 +39,10 @@ public class InputDataTestUtils {
     createProductInputData.setMaxParcels(10);
     createProductInputData.setRate(5);
     return createProductInputData;
+  }
+
+  public static OrderItemInputData buildOrderItemInputData() {
+    return buildOrderItemInputData(1123123123L);
   }
 
   public static OrderItemInputData buildOrderItemInputData(long code) {

@@ -25,7 +25,7 @@ public class ProductRepositoryBridge extends ProductRepositoryAdapter {
 
   @Override
   protected Page<ProductModel> findAllPagedBridge(int page, int itemsPerPage) {
-    return repository.findAll(PageRequest.of(page-1, itemsPerPage));
+    return repository.findAll(PageRequest.of(page - 1, itemsPerPage));
   }
 
   @Override

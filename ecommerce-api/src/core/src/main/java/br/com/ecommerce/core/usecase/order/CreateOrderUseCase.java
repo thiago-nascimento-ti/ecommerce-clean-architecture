@@ -2,7 +2,6 @@ package br.com.ecommerce.core.usecase.order;
 
 import br.com.ecommerce.core.entity.Order;
 import br.com.ecommerce.core.entity.OrderItem;
-import br.com.ecommerce.core.exception.BusinessException;
 import br.com.ecommerce.core.exception.DuplicatedException;
 import br.com.ecommerce.core.exception.InsufficientProductStockException;
 import br.com.ecommerce.core.exception.InsufficientStockException;

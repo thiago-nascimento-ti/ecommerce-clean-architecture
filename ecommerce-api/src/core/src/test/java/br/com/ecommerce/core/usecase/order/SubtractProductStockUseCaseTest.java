@@ -5,7 +5,6 @@ import br.com.ecommerce.core.entity.Product;
 import br.com.ecommerce.core.exception.BusinessException;
 import br.com.ecommerce.core.exception.InsufficientProductStockException;
 import br.com.ecommerce.core.repository.ProductRepository;
-import br.com.ecommerce.core.usecase.order.SubtractProductStockUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -38,7 +37,7 @@ public class SubtractProductStockUseCaseTest {
   }
 
   @Test
-  public void shouldThrowInsufficientProductStockExceptionWhenStockIsSmallerThanToValueToSubtract() {
+  public void shouldThrowInsufficientProductStockExceptionWhenStockIsSmallerThanAmount() {
     long code = 7215412364L;
     int stockToSubtract = 10;
     Product product = TestUtils.buildProduct(code, 5);

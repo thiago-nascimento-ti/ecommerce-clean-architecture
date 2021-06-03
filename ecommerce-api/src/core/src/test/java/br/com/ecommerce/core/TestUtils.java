@@ -58,7 +58,7 @@ public class TestUtils {
         .reduce(0d, Double::sum);
   }
 
-  public static List<Product> buildProductList(long ...codes) {
+  public static List<Product> buildProductList(long... codes) {
     return Arrays.stream(codes).mapToObj(
         code -> buildProduct(code))
         .collect(Collectors.toList());

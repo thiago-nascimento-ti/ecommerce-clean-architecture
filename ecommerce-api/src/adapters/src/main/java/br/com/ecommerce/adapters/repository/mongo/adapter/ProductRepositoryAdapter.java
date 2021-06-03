@@ -35,6 +35,7 @@ public abstract class ProductRepositoryAdapter implements ProductRepository {
   }
 
   protected abstract List<ProductModel> findAllBridge();
+
   protected abstract Page<ProductModel> findAllPagedBridge(int page, int itemsPerPage);
 
   private List<Product> convertToProductList(List<ProductModel> items) {
