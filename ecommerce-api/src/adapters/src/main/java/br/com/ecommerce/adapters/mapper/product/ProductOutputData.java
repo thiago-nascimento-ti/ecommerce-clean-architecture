@@ -1,13 +1,11 @@
-package br.com.ecommerce.adapters.repository.mongo.model;
+package br.com.ecommerce.adapters.mapper.product;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import br.com.ecommerce.adapters.mapper.OutputMapper;
+import br.com.ecommerce.core.entity.Product;
 
-@Document("products")
-public class ProductModel {
+public class ProductOutputData implements OutputMapper<Product, ProductOutputData> {
 
-  @Id
-  private long code;
+  private long id;
   private String name;
   private String description;
   private double price;
@@ -15,12 +13,24 @@ public class ProductModel {
   private Integer maxParcels;
   private Integer stock;
 
-  public long getCode() {
-    return code;
+  @Override
+  public ProductOutputData fromEntity(Product entity) {
+    id = entity.getCode();
+    name = entity.getName();
+    description = entity.getDescription();
+    price = entity.getPrice();
+    image = entity.getImage();
+    maxParcels = entity.getMaxParcels();
+    stock = entity.getStock();
+    return this;
   }
 
-  public void setCode(long code) {
-    this.code = code;
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
   }
 
   public String getName() {
@@ -70,5 +80,4 @@ public class ProductModel {
   public void setStock(Integer stock) {
     this.stock = stock;
   }
-
 }
