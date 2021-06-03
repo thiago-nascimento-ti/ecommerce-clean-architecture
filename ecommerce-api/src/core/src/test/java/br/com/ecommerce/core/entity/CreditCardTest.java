@@ -14,7 +14,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldBeValid() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -25,7 +25,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCardNumberIsLessThan16Digits() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "11";
     String cardNumber = "111111111111111";
     CreditCard creditCard = TestUtils
@@ -40,7 +40,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCardNumberIsGreaterThan16Digits() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "1111";
     String cardNumber = "11111111111111111";
     CreditCard creditCard = TestUtils
@@ -55,7 +55,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCardNumberIsNull() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "111";
     String cardNumber = null;
     CreditCard creditCard = TestUtils
@@ -70,7 +70,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCardNumberIs1234123412341234() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "111";
     String cardNumber = "1234123412341234";
     CreditCard creditCard = TestUtils
@@ -85,7 +85,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCvvIsLessThan3Digits() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "11";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -100,7 +100,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCvvIsGreaterThan3Digits() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "1111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -115,7 +115,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCvvIsNull() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = null;
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -130,7 +130,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenCvvIs123() {
-    String validateDate = "2070/01";
+    String validateDate = "2070-01";
     String cvv = "123";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -159,8 +159,8 @@ public class CreditCardTest {
   }
 
   @Test
-  public void shouldThrowCreditCardInvalidExceptionWhenValidateDateIsLessThan7Digits() {
-    String validateDate = "2020/1";
+  public void shouldThrowCreditCardInvalidExceptionWhenValidateDateIsLessThan7or6Digits() {
+    String validateDate = "20201";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -175,7 +175,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenValidateDateIsGreaterThan7Digits() {
-    String validateDate = "2020/001";
+    String validateDate = "2020-001";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -190,7 +190,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenValidateDateCouldNotBeParsed() {
-    String validateDate = "2020/asd";
+    String validateDate = "2020-asd";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = TestUtils
@@ -205,7 +205,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenYearIsBeforeThanNow() {
-    String validateDate = "2020/05";
+    String validateDate = "2020-05";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = Mockito.spy(TestUtils
@@ -222,7 +222,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldThrowCreditCardInvalidExceptionWhenYearIsEqualsButBeforeThanNow() {
-    String validateDate = "2021/04";
+    String validateDate = "2021-04";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = Mockito.spy(TestUtils
@@ -239,7 +239,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldBeValidWhenYearIsGreaterThanNow() {
-    String validateDate = "2022/01";
+    String validateDate = "2022-01";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = Mockito.spy(TestUtils
@@ -252,7 +252,7 @@ public class CreditCardTest {
 
   @Test
   public void shouldBeValidWhenYearAndMonthIsEquals() {
-    String validateDate = "2021/05";
+    String validateDate = "2021-05";
     String cvv = "111";
     String cardNumber = "1111111111111111";
     CreditCard creditCard = Mockito.spy(TestUtils

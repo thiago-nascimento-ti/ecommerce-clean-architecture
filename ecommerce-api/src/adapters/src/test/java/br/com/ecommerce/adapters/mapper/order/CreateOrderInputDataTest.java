@@ -14,8 +14,6 @@ public class CreateOrderInputDataTest {
     Order order = inputData.toEntity();
 
     Assertions.assertNull(order.getId());
-    Assertions.assertEquals(inputData.getPayable(), order.getPayable());
-    Assertions.assertEquals(inputData.getItemsAmount(), order.getItemsAmount());
     Assertions.assertEquals(inputData.getItems().size(), order.getItems().size());
     Assertions.assertNotNull(inputData.getCreditCard());
   }

@@ -35,7 +35,7 @@ public class CreditCardModelAdapterTest {
     String cvv = "111";
     String name = "John Doe";
     int parcelAmount = 2;
-    String validateDate = "2070/12";
+    String validateDate = "2070-12";
     String expectedHash = "662147282";
 
     CreditCard creditCard = new CreditCard(numberCard, name, validateDate, cvv, parcelAmount);

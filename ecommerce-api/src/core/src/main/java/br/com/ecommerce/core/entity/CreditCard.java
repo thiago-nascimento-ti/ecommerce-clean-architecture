@@ -84,8 +84,7 @@ public class CreditCard {
   }
 
   protected LocalDateTime getLocalDateTimeFromValidateDate() {
-    String value = (validateDate + "/15T00:00")
-        .replaceAll("/", "-");
+    String value = (validateDate + "-15T00:00");
     return LocalDateTime.parse(value);
   }
 

@@ -118,7 +118,7 @@ public class ProductResourceTest extends MongoContainer {
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(header().string("x-total-count", String.valueOf(paged.getTotalItems())))
+        .andExpect(header().string("X-Total-Count", String.valueOf(paged.getTotalItems())))
         .andExpect(content()
             .json(gson.toJson(paged.getItems()), false));
   }
@@ -134,7 +134,7 @@ public class ProductResourceTest extends MongoContainer {
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(header().string("x-total-count", String.valueOf(paged.getTotalItems())))
+        .andExpect(header().string("X-Total-Count", String.valueOf(paged.getTotalItems())))
         .andExpect(content()
             .json(gson.toJson(paged.getItems()), false));
   }
@@ -150,7 +150,7 @@ public class ProductResourceTest extends MongoContainer {
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(header().string("x-total-count", String.valueOf(paged.getTotalItems())))
+        .andExpect(header().string("X-Total-Count", String.valueOf(paged.getTotalItems())))
         .andExpect(content()
             .json(gson.toJson(paged.getItems()), false));
   }
@@ -166,7 +166,7 @@ public class ProductResourceTest extends MongoContainer {
         .andExpect(status().isOk())
         .andExpect(content()
             .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(header().string("x-total-count", String.valueOf(paged.getTotalItems())))
+        .andExpect(header().string("X-Total-Count", String.valueOf(paged.getTotalItems())))
         .andExpect(content()
             .json(gson.toJson(paged.getItems()), false));
   }

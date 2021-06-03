@@ -10,8 +10,6 @@ import java.util.stream.Collectors;
 public class CreateOrderInputData implements InputMapper<Order> {
 
   private List<OrderItemInputData> items;
-  private int itemsAmount;
-  private double payable;
   private CreditCardInputData creditCard;
 
   @Override
@@ -21,8 +19,24 @@ public class CreateOrderInputData implements InputMapper<Order> {
         .stream()
         .map(OrderItemInputData::toEntity)
         .collect(Collectors.toList());
+    int itemsAmount = getItemsAmount(items);
+    double payable = getOrderPayable(items);
 
     return new Order(items, itemsAmount, payable, creditCard);
+  }
+
+  private static int getItemsAmount(List<OrderItem> items) {
+    return items
+        .stream()
+        .map(OrderItem::getAmount)
+        .reduce(0, Integer::sum);
+  }
+
+  private static double getOrderPayable(List<OrderItem> items) {
+    return items
+        .stream()
+        .map(item -> item.getProduct().getPrice() * item.getAmount())
+        .reduce(0d, Double::sum);
   }
 
   public List<OrderItemInputData> getItems() {
@@ -31,22 +45,6 @@ public class CreateOrderInputData implements InputMapper<Order> {
 
   public void setItems(List<OrderItemInputData> items) {
     this.items = items;
-  }
-
-  public int getItemsAmount() {
-    return itemsAmount;
-  }
-
-  public void setItemsAmount(int itemsAmount) {
-    this.itemsAmount = itemsAmount;
-  }
-
-  public double getPayable() {
-    return payable;
-  }
-
-  public void setPayable(double payable) {
-    this.payable = payable;
   }
 
   public CreditCardInputData getCreditCard() {

@@ -11,8 +11,6 @@ public class InputDataTestUtils {
 
   public static CreateOrderInputData buildCreateOrderInputData() {
     CreateOrderInputData createOrderInputData = new CreateOrderInputData();
-    createOrderInputData.setPayable(30);
-    createOrderInputData.setItemsAmount(10);
     createOrderInputData.setItems(Arrays.asList(buildOrderItemInputData()));
     createOrderInputData.setCreditCard(buildCreditCardInputData());
     return createOrderInputData;
@@ -58,7 +56,7 @@ public class InputDataTestUtils {
     inputData.setCardNumber("1111111111111111");
     inputData.setCvv("111");
     inputData.setName("John Doe");
-    inputData.setValidateDate("2070/12");
+    inputData.setValidateDate("2070-12");
     inputData.setParcelAmount(2);
     return inputData;
   }

@@ -83,7 +83,7 @@ public class CreateOrderUseCaseTest {
     long code = 1123123123L;
     int amount = 3;
     OrderItem item = new OrderItem(TestUtils.buildProduct(code), amount);
-    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070/10", "111");
+    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070-10", "111");
     Order order = TestUtils.buildOrder(Arrays.asList(item), creditCard);
 
     Mockito.doThrow(new InsufficientProductStockException(code))
@@ -118,7 +118,7 @@ public class CreateOrderUseCaseTest {
     OrderItem item1 = new OrderItem(TestUtils.buildProduct(code1), amount1);
     OrderItem item2 = new OrderItem(TestUtils.buildProduct(code2), amount2);
 
-    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070/10", "111");
+    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070-10", "111");
     Order order = TestUtils.buildOrder(Arrays.asList(item1, item2), creditCard);
 
     Mockito.doThrow(new InsufficientProductStockException(0))

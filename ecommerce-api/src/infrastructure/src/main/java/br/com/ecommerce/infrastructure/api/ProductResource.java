@@ -60,7 +60,7 @@ public class ProductResource extends RestResource {
         .collect(Collectors.toList());
 
     HttpHeaders headers = new HttpHeaders();
-    headers.add("x-total-count", String.valueOf(paged.getTotalItems()));
+    headers.add("X-Total-Count", String.valueOf(paged.getTotalItems()));
 
     return new ResponseEntity<>(outputDataList, headers, HttpStatus.OK);
   }

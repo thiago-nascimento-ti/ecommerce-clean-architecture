@@ -26,7 +26,7 @@ public class OutputTestUtils {
     String cvv = "111";
     String name = "John Doe";
     int parcelAmount = 2;
-    String validateDate = "2070/12";
+    String validateDate = "2070-12";
     return new CreditCard(cardNumber, name, validateDate, cvv, parcelAmount);
   }
 

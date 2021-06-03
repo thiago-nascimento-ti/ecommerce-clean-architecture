@@ -160,8 +160,6 @@ public class OrderResourceTest extends MongoContainer {
     CreateOrderInputData createOrderInputData = new CreateOrderInputData();
     createOrderInputData.setCreditCard(creditCardInputData);
     createOrderInputData.setItems(items);
-    createOrderInputData.setPayable(getOrderPayable(items));
-    createOrderInputData.setItemsAmount(getItemsAmount(items));
 
     return createOrderInputData;
   }
@@ -209,7 +207,7 @@ public class OrderResourceTest extends MongoContainer {
     creditCardInputData.setCvv(valid ? "111" : "123");
     creditCardInputData.setName("Credit card test");
     creditCardInputData.setParcelAmount(12);
-    creditCardInputData.setValidateDate("2070/05");
+    creditCardInputData.setValidateDate("2070-05");
 
     return creditCardInputData;
   }

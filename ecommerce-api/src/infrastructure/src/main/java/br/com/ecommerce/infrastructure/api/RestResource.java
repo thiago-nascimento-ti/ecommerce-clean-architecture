@@ -3,8 +3,10 @@ package br.com.ecommerce.infrastructure.api;
 import java.net.URI;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+@CrossOrigin(exposedHeaders = {"X-Total-Count"})
 public class RestResource {
 
   protected URI getLocation(UUID id) {

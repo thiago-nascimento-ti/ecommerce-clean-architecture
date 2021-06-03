@@ -17,7 +17,7 @@ public class OrderTest {
     int amount = 3;
     double payable = 20.20 * 3;
     OrderItem item = new OrderItem(TestUtils.buildProduct(code), amount);
-    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070/10", "111");
+    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070-10", "111");
     Order order = new Order(Arrays.asList(item), amount, payable, creditCard);
 
     order.validate();
@@ -29,7 +29,7 @@ public class OrderTest {
     int amount = 3;
     double payable = 20.20 * 3;
     OrderItem item = new OrderItem(TestUtils.buildProduct(code), amount);
-    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070/10", "111");
+    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070-10", "111");
     Order order = new Order(Arrays.asList(item), 5, payable, creditCard);
 
     Throwable exception = Assertions.assertThrows(BusinessException.class, () -> {
@@ -44,7 +44,7 @@ public class OrderTest {
     long code = 1123123123L;
     int amount = 3;
     OrderItem item = new OrderItem(TestUtils.buildProduct(code), amount);
-    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070/10", "111");
+    CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2070-10", "111");
     Order order = new Order(Arrays.asList(item), amount, 50, creditCard);
 
     Throwable exception = Assertions.assertThrows(BusinessException.class, () -> {
