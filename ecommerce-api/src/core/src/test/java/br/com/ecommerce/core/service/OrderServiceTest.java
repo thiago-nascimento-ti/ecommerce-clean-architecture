@@ -4,10 +4,9 @@ import br.com.ecommerce.core.TestUtils;
 import br.com.ecommerce.core.entity.CreditCard;
 import br.com.ecommerce.core.entity.Order;
 import br.com.ecommerce.core.entity.OrderItem;
-import br.com.ecommerce.core.entity.Product;
-import br.com.ecommerce.core.usecase.order.SaveOrderUseCase;
+import br.com.ecommerce.core.usecase.order.CreateOrderUseCase;
 import java.util.Arrays;
-import java.util.List;
+import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class OrderServiceTest {
 
   @Mock
-  private SaveOrderUseCase saveOrderUseCase;
+  private CreateOrderUseCase saveOrderUseCase;
   @InjectMocks
   private OrderService service;
 
@@ -32,20 +31,20 @@ public class OrderServiceTest {
     CreditCard creditCard = TestUtils.buildCreditCard("1111111111111111", "2018/10", "111");
     Order order = Mockito.spy(TestUtils.buildOrder(Arrays.asList(item), creditCard));
 
-    long id = 4564L;
+    UUID id = UUID.randomUUID();
     Order expectedOrder = Mockito.spy(TestUtils.buildOrder(id, Arrays.asList(item), creditCard));
 
-    Mockito.doReturn(expectedOrder).when(saveOrderUseCase).execute(order);
+    Mockito.doReturn(expectedOrder).when(saveOrderUseCase).execute(Mockito.eq(order), Mockito.any(UUID.class));
 
-    Order result = service.save(order);
+    Order result = service.create(order);
 
     Assertions.assertNotNull(result);
-    Assertions.assertEquals(id, result.getId());
+    Assertions.assertNotNull(result.getId());
     Assertions.assertEquals(creditCard, result.getCreditCard());
     Assertions.assertEquals(order.getItems().size(), result.getItems().size());
     Assertions.assertEquals(expectedOrder.getPayable(), result.getPayable());
     Assertions.assertEquals(expectedOrder.getItemsAmount(), result.getItemsAmount());
-    Mockito.verify(saveOrderUseCase).execute(order);
+    Mockito.verify(saveOrderUseCase).execute(Mockito.eq(order), Mockito.any(UUID.class));
   }
 
 }

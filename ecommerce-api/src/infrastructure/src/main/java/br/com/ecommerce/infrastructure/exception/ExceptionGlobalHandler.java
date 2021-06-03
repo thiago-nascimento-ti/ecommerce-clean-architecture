@@ -1,8 +1,10 @@
 package br.com.ecommerce.infrastructure.exception;
 
 import br.com.ecommerce.core.exception.BusinessException;
+import br.com.ecommerce.core.exception.CreditCardInvalidException;
 import br.com.ecommerce.core.exception.DuplicatedException;
 import br.com.ecommerce.core.exception.ForbidenException;
+import br.com.ecommerce.core.exception.InsufficientStockException;
 import br.com.ecommerce.core.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 @ResponseBody
 public class ExceptionGlobalHandler {
+
+  @ExceptionHandler(InsufficientStockException.class)
+  public ResponseEntity handleCreditCardInvalidResource(InsufficientStockException e) {
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+        .body(new InsufficientStockError(e));
+  }
+
+  @ExceptionHandler(CreditCardInvalidException.class)
+  public ResponseEntity handleCreditCardInvalidResource(CreditCardInvalidException e) {
+    return ResponseEntity.status(HttpStatus.PAYMENT_REQUIRED)
+        .body(new MessageError(e.getMessage()));
+  }
 
   @ExceptionHandler(BusinessException.class)
   public ResponseEntity handleDuplicate(BusinessException e) {
@@ -34,20 +48,4 @@ public class ExceptionGlobalHandler {
     return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new MessageError(e.getMessage()));
   }
 
-  private class MessageError {
-
-    private String message;
-
-    public MessageError(String message) {
-      this.message = message;
-    }
-
-    public String getMessage() {
-      return message;
-    }
-
-    public void setMessage(String message) {
-      this.message = message;
-    }
-  }
 }

@@ -1,6 +1,7 @@
 package br.com.ecommerce.adapters.repository.mongo.model;
 
 import java.util.List;
+import java.util.UUID;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,17 +9,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class OrderModel {
 
   @Id
-  private Long id;
+  private UUID id;
   private List<ItemModel> items;
   private int itemsAmount;
   private double payable;
   private CreditCardModel creditCard;
 
-  public Long getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 

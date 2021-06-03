@@ -4,6 +4,7 @@ import br.com.ecommerce.adapters.repository.mongo.model.OrderModel;
 import br.com.ecommerce.adapters.repository.mongo.model.adapter.OrderModelAdapter;
 import br.com.ecommerce.core.entity.Order;
 import br.com.ecommerce.core.repository.OrderRepository;
+import java.util.UUID;
 
 public abstract class OrderRepositoryAdapter implements OrderRepository {
 
@@ -14,19 +15,22 @@ public abstract class OrderRepositoryAdapter implements OrderRepository {
   }
 
   @Override
-  public Order findById(Long id) {
+  public Order findById(UUID id) {
     OrderModel model = findByIdBridge(id);
-    return modelAdapter.toEntity(model);
+    if (model != null) {
+      return modelAdapter.toEntity(model);
+    }
+    return null;
   }
 
-  protected abstract OrderModel findByIdBridge(Long id);
+  protected abstract OrderModel findByIdBridge(UUID id);
 
   @Override
-  public Order save(Order order) {
-    OrderModel model = saveBridge(modelAdapter.toModel(order));
+  public Order create(Order order) {
+    OrderModel model = createBridge(modelAdapter.toModel(order));
     return modelAdapter.toEntity(model);
   }
 
-  protected abstract OrderModel saveBridge(OrderModel model);
+  protected abstract OrderModel createBridge(OrderModel model);
 
 }

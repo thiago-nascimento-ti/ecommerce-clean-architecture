@@ -2,15 +2,16 @@ package br.com.ecommerce.core.entity;
 
 import br.com.ecommerce.core.exception.BusinessException;
 import java.util.List;
+import java.util.UUID;
 
 public class Order {
-  private Long id;
+  private UUID id;
   private final List<OrderItem> items;
   private final int itemsAmount;
   private final double payable;
   private final CreditCard creditCard;
 
-  public Order(Long id, List<OrderItem> items, int itemsAmount, double payable, CreditCard creditCard) {
+  public Order(UUID id, List<OrderItem> items, int itemsAmount, double payable, CreditCard creditCard) {
     this(items, itemsAmount, payable, creditCard);
     this.id = id;
   }
@@ -22,7 +23,11 @@ public class Order {
     this.creditCard = creditCard;
   }
 
-  public Long getId() {
+  public void setId(UUID id) {
+    this.id = id;
+  }
+
+  public UUID getId() {
     return id;
   }
 

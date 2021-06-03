@@ -11,6 +11,7 @@ import br.com.ecommerce.core.repository.ProductRepository;
 import br.com.ecommerce.core.usecase.product.FindProductByCodeUseCase;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,7 +30,7 @@ public class FindOrderByIdUseCaseTest {
 
   @Test
   public void shouldFindOrderById() {
-    long id = 1000;
+    UUID id = UUID.randomUUID();
     long code = 1123123123L;
     OrderItem item = new OrderItem(TestUtils.buildProduct(code), 1);
     CreditCard creditCard = TestUtils.buildCreditCard("1234123412341234", "2018/10", "123");
@@ -46,15 +47,15 @@ public class FindOrderByIdUseCaseTest {
 
   @Test
   public void shouldThrowNotFoundExceptionWhenOrderIdDoesNotExists() {
-    long code = 7215484564L;
-    Mockito.doReturn(null).when(repository).findById(code);
+    UUID id = UUID.randomUUID();
+    Mockito.doReturn(null).when(repository).findById(id);
 
     Throwable exception = Assertions.assertThrows(NotFoundException.class, () -> {
-      useCase.execute(code);
+      useCase.execute(id);
     });
 
     Assertions.assertEquals("Order not found", exception.getMessage());
-    Mockito.verify(repository).findById(code);
+    Mockito.verify(repository).findById(id);
   }
 
 }

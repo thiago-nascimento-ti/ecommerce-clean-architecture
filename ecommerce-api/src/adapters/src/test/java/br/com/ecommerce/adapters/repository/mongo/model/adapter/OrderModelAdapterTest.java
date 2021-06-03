@@ -9,6 +9,7 @@ import br.com.ecommerce.core.entity.OrderItem;
 import br.com.ecommerce.core.entity.Product;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ public class OrderModelAdapterTest {
   @Test
   public void shouldAdapterConvertToEntity() {
     OrderModelAdapter modelAdapter = new OrderModelAdapter();
-    Long id = 10L;
+    UUID id = UUID.randomUUID();
     double payable = 30;
     int itemsAmount = 10;
 
@@ -65,7 +66,7 @@ public class OrderModelAdapterTest {
     }
     CreditCard creditCard = new CreditCard("1111111111111111", "John Doe", "2070/12", "111", 2);
 
-    Long id = 10L;
+    UUID id = UUID.randomUUID();
     double payable = 30;
     int itemsAmount = 10;
     Order order = new Order(id, items, itemsAmount, payable, creditCard);

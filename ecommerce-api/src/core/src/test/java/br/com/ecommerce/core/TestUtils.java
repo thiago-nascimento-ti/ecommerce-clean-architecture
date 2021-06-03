@@ -6,6 +6,7 @@ import br.com.ecommerce.core.entity.OrderItem;
 import br.com.ecommerce.core.entity.Product;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class TestUtils {
@@ -31,7 +32,7 @@ public class TestUtils {
     return new CreditCard(cardNumber, name, validateDate, cvv, parcelAmount);
   }
 
-  public static Order buildOrder(long id, List<OrderItem> items, CreditCard creditCard) {
+  public static Order buildOrder(UUID id, List<OrderItem> items, CreditCard creditCard) {
     int itemsAmount = getItemsAmount(items);
     double payable = getOrderPayable(items);
     return new Order(id, items, itemsAmount, payable, creditCard);

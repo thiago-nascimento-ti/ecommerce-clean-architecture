@@ -24,7 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping("/v1/products")
-public class ProductResource {
+public class ProductResource extends RestResource {
 
   private final ProductService service;
 
@@ -38,8 +38,7 @@ public class ProductResource {
   public ResponseEntity<Void> create(@RequestBody CreateProductInputData createUserInputData) {
     Product product = createUserInputData.toEntity();
     service.save(product);
-    URI location = getLocation(product.getCode());
-    return ResponseEntity.created(location).build();
+    return created(getLocation(product.getCode()));
   }
 
   @GetMapping("{code}")
@@ -66,14 +65,6 @@ public class ProductResource {
     headers.add("x-total-count", String.valueOf(paged.getTotalItems()));
 
     return new ResponseEntity<>(outputDataList, headers, HttpStatus.OK);
-  }
-
-  private URI getLocation(long id) {
-    return ServletUriComponentsBuilder
-        .fromCurrentRequest()
-        .path("/{id}")
-        .buildAndExpand(id)
-        .toUri();
   }
 
   private ProductOutputData toOutputData(Product product) {

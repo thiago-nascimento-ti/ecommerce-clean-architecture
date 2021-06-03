@@ -1,20 +1,34 @@
 package br.com.ecommerce.core.service;
 
 import br.com.ecommerce.core.entity.Order;
-import br.com.ecommerce.core.usecase.order.SaveOrderUseCase;
+import br.com.ecommerce.core.usecase.order.CreateOrderUseCase;
+import br.com.ecommerce.core.usecase.order.FindOrderByIdUseCase;
+import java.util.UUID;
 
 public class OrderService {
 
-  private final SaveOrderUseCase saveOrderUseCase;
+  private final CreateOrderUseCase createOrderUseCase;
+  private final FindOrderByIdUseCase findOrderByIdUseCase;
 
   public OrderService(
-      SaveOrderUseCase saveOrderUseCase
+      CreateOrderUseCase createOrderUseCase,
+      FindOrderByIdUseCase findOrderByIdUseCase
   ) {
-    this.saveOrderUseCase = saveOrderUseCase;
+    this.createOrderUseCase = createOrderUseCase;
+    this.findOrderByIdUseCase = findOrderByIdUseCase;
   }
 
-  public Order save(Order order) {
-    return saveOrderUseCase.execute(order);
+
+  public Order create(Order order) {
+    return createOrderUseCase.execute(order, getSequenceId());
+  }
+
+  public Order findById(UUID id) {
+    return findOrderByIdUseCase.execute(id);
+  }
+
+  public UUID getSequenceId() {
+    return UUID.randomUUID();
   }
 
 }

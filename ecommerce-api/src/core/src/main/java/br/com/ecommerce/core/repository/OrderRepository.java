@@ -1,8 +1,9 @@
 package br.com.ecommerce.core.repository;
 
 import br.com.ecommerce.core.entity.Order;
+import java.util.UUID;
 
 public interface OrderRepository {
-  Order findById(Long id);
-  Order save(Order order);
+  Order findById(UUID id);
+  Order create(Order order);
 }
