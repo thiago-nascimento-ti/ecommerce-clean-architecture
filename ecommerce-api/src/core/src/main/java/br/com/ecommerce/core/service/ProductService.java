@@ -1,6 +1,6 @@
 package br.com.ecommerce.core.service;
 
-import br.com.ecommerce.core.entity.Page;
+import br.com.ecommerce.core.entity.Paged;
 import br.com.ecommerce.core.entity.Product;
 import br.com.ecommerce.core.usecase.product.FindAllProductsPagedUseCase;
 import br.com.ecommerce.core.usecase.product.FindProductByCodeUseCase;
@@ -30,7 +30,7 @@ public class ProductService {
     return findProductByCode(code).getStock();
   }
 
-  public Page<Product> findAllProductPaged(int page, int itemsPerPage) {
+  public Paged<Product> findAllProductPaged(int page, int itemsPerPage) {
     return findAllProductsPagedUseCase.execute(page, itemsPerPage);
   }
 

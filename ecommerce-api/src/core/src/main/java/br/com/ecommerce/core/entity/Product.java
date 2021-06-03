@@ -9,11 +9,15 @@ public class Product {
   private final String description;
   private final double price;
   private final String image;
-  private final int maxParcels;
-  private int stock;
+  private final Integer maxParcels;
+  private Integer stock;
+
+  public Product(long code, String name, String description, double price, String image) {
+    this(code, name, description, price, image, null, null);
+  }
 
   public Product(long code, String name, String description, double price, String image,
-      int maxParcels, int stock) {
+      Integer maxParcels, Integer stock) {
     this.code = code;
     this.name = name;
     this.description = description;
@@ -43,11 +47,11 @@ public class Product {
     return image;
   }
 
-  public int getMaxParcels() {
+  public Integer getMaxParcels() {
     return maxParcels;
   }
 
-  public int getStock() {
+  public Integer getStock() {
     return stock;
   }
 

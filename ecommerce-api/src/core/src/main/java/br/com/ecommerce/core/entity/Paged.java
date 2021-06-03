@@ -2,12 +2,12 @@ package br.com.ecommerce.core.entity;
 
 import java.util.List;
 
-public class Page<T> {
+public class Paged<T> {
 
   private final List<T> items;
-  private int totalItems;
+  private long totalItems;
 
-  public Page(List<T> items, int totalItems) {
+  public Paged(List<T> items, long totalItems) {
     this.items = items;
     this.totalItems = totalItems;
   }
@@ -16,7 +16,7 @@ public class Page<T> {
     return items;
   }
 
-  public int getTotalItems() {
+  public long getTotalItems() {
     return totalItems;
   }
 }

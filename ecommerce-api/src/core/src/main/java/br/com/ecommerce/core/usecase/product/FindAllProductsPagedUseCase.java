@@ -1,6 +1,6 @@
 package br.com.ecommerce.core.usecase.product;
 
-import br.com.ecommerce.core.entity.Page;
+import br.com.ecommerce.core.entity.Paged;
 import br.com.ecommerce.core.entity.Product;
 import br.com.ecommerce.core.repository.ProductRepository;
 
@@ -12,7 +12,7 @@ public class FindAllProductsPagedUseCase {
     this.repository = repository;
   }
 
-  public Page<Product> execute(int page, int itemsPerPage) {
+  public Paged<Product> execute(int page, int itemsPerPage) {
     return repository.findAllPaged(page, itemsPerPage);
   }
 

@@ -1,7 +1,6 @@
 package br.com.ecommerce.core.entity;
 
 import br.com.ecommerce.core.exception.CreditCardInvalidException;
-import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
 

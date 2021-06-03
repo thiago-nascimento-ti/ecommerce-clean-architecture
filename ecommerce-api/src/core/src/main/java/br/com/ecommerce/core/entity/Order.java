@@ -4,13 +4,13 @@ import br.com.ecommerce.core.exception.BusinessException;
 import java.util.List;
 
 public class Order {
-  private long id;
+  private Long id;
   private final List<OrderItem> items;
   private final int itemsAmount;
   private final double payable;
   private final CreditCard creditCard;
 
-  public Order(long id, List<OrderItem> items, int itemsAmount, double payable, CreditCard creditCard) {
+  public Order(Long id, List<OrderItem> items, int itemsAmount, double payable, CreditCard creditCard) {
     this(items, itemsAmount, payable, creditCard);
     this.id = id;
   }
@@ -22,7 +22,7 @@ public class Order {
     this.creditCard = creditCard;
   }
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 

@@ -1,7 +1,7 @@
 package br.com.ecommerce.core.service;
 
 import br.com.ecommerce.core.TestUtils;
-import br.com.ecommerce.core.entity.Page;
+import br.com.ecommerce.core.entity.Paged;
 import br.com.ecommerce.core.entity.Product;
 import br.com.ecommerce.core.usecase.product.FindAllProductsPagedUseCase;
 import br.com.ecommerce.core.usecase.product.FindProductByCodeUseCase;
@@ -64,12 +64,12 @@ public class ProductServiceTest {
   public void shouldFindPagedProducts() {
     int page = 1;
     int itemsPerPage = 10;
-    Page<Product> paged = new Page<>(
+    Paged<Product> paged = new Paged<>(
         TestUtils.buildProductList(7823159138L, 3163634337L, 7528877106L),
         3);
     Mockito.doReturn(paged).when(findAllProductsPagedUseCase).execute(page, itemsPerPage);
 
-    Page<Product> pagedResult = service.findAllProductPaged(page, itemsPerPage);
+    Paged<Product> pagedResult = service.findAllProductPaged(page, itemsPerPage);
 
     Assertions.assertEquals(pagedResult, paged);
     Mockito.verify(findAllProductsPagedUseCase).execute(page, itemsPerPage);
