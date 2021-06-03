@@ -9,20 +9,22 @@ public class Product {
   private final String description;
   private final double price;
   private final String image;
+  private final Integer rate;
   private final Integer maxParcels;
   private Integer stock;
 
   public Product(long code, String name, String description, double price, String image) {
-    this(code, name, description, price, image, null, null);
+    this(code, name, description, price, image, null, null, null);
   }
 
-  public Product(long code, String name, String description, double price, String image,
+  public Product(long code, String name, String description, double price, String image, Integer rate,
       Integer maxParcels, Integer stock) {
     this.code = code;
     this.name = name;
     this.description = description;
     this.price = price;
     this.image = image;
+    this.rate = rate;
     this.maxParcels = maxParcels;
     this.stock = stock;
   }
@@ -41,6 +43,10 @@ public class Product {
 
   public double getPrice() {
     return price;
+  }
+
+  public Integer getRate() {
+    return rate;
   }
 
   public String getImage() {

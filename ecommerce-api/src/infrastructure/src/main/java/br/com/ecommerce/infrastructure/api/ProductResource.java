@@ -44,7 +44,7 @@ public class ProductResource {
 
   @GetMapping("{code}")
   @ResponseStatus(HttpStatus.OK)
-  public ProductOutputData findByCode(@PathVariable("code") Long code) {
+  public ProductOutputData findById(@PathVariable("code") Long code) {
     Product product = service.findProductByCode(code);
     return new ProductOutputData().fromEntity(product);
   }
@@ -53,7 +53,7 @@ public class ProductResource {
   @ResponseStatus(HttpStatus.OK)
   public ResponseEntity<List<ProductOutputData>> findAllPaged(
       @RequestParam(value = "_page", required = false, defaultValue = "1") int page,
-      @RequestParam(value = "_limit", required = false, defaultValue = "10000") int itemsPerPage) {
+      @RequestParam(value = "_limit", required = false, defaultValue = "0") int itemsPerPage) {
     Paged<Product> paged = service.findAllProductPaged(page, itemsPerPage);
 
     List<ProductOutputData> outputDataList = paged

@@ -12,6 +12,7 @@ public class ProductModel {
   private String description;
   private double price;
   private String image;
+  private Integer rate;
   private Integer maxParcels;
   private Integer stock;
 
@@ -53,6 +54,14 @@ public class ProductModel {
 
   public void setImage(String image) {
     this.image = image;
+  }
+
+  public Integer getRate() {
+    return rate;
+  }
+
+  public void setRate(Integer rate) {
+    this.rate = rate;
   }
 
   public Integer getMaxParcels() {

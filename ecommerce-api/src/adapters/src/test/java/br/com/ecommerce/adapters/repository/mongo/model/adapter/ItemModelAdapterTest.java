@@ -34,6 +34,7 @@ public class ItemModelAdapterTest {
     Assertions.assertEquals(description, item.getProduct().getDescription());
     Assertions.assertEquals(price, item.getProduct().getPrice());
     Assertions.assertEquals(image, item.getProduct().getImage());
+    Assertions.assertNull(item.getProduct().getRate());
     Assertions.assertNull(item.getProduct().getMaxParcels());
     Assertions.assertNull(item.getProduct().getStock());
   }
@@ -46,11 +47,12 @@ public class ItemModelAdapterTest {
     String description = "Product test description";
     double price = 20.23;
     String image = "url";
+    int rate = 5;
     int maxParcels = 10;
     int stock = 10;
     int amount = 5;
 
-    Product product = new Product(code, name, description, price, image, maxParcels, stock);
+    Product product = new Product(code, name, description, price, image, rate, maxParcels, stock);
     OrderItem item = new OrderItem(product, amount);
 
     ItemModel model = modelAdapter.toModel(item);

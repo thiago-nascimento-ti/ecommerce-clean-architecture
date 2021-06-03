@@ -17,8 +17,4 @@ public class OrderService {
     return saveOrderUseCase.execute(order);
   }
 
-  public Order findBy(long id) {
-    return null;
-  }
-
 }

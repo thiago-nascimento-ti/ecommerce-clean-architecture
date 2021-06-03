@@ -10,12 +10,13 @@ public class CreateProductInputData implements InputMapper<Product> {
   private String description;
   private double price;
   private String image;
+  private Integer rate;
   private Integer maxParcels;
   private Integer stock;
 
   @Override
   public Product toEntity() {
-    return new Product(id, name, description, price, image, maxParcels, stock);
+    return new Product(id, name, description, price, image, rate, maxParcels, stock);
   }
 
   public long getId() {
@@ -56,6 +57,14 @@ public class CreateProductInputData implements InputMapper<Product> {
 
   public void setImage(String image) {
     this.image = image;
+  }
+
+  public Integer getRate() {
+    return rate;
+  }
+
+  public void setRate(Integer rate) {
+    this.rate = rate;
   }
 
   public Integer getMaxParcels() {

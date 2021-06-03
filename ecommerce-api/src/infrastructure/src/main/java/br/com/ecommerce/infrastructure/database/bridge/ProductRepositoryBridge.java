@@ -4,6 +4,7 @@ import br.com.ecommerce.adapters.repository.mongo.adapter.ProductRepositoryAdapt
 import br.com.ecommerce.adapters.repository.mongo.model.ProductModel;
 import br.com.ecommerce.adapters.repository.mongo.model.adapter.ProductModelAdapter;
 import br.com.ecommerce.infrastructure.database.springdata.ProductMongoRepository;
+import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
@@ -15,6 +16,11 @@ public class ProductRepositoryBridge extends ProductRepositoryAdapter {
       ProductModelAdapter modelAdapter) {
     super(modelAdapter);
     this.repository = repository;
+  }
+
+  @Override
+  protected List<ProductModel> findAllBridge() {
+    return repository.findAll();
   }
 
   @Override

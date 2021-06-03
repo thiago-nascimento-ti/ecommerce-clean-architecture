@@ -21,7 +21,8 @@ public class TestUtils {
     double price = 20.20;
     String image = "url";
     int maxParcels = 10;
-    return new Product(code, name, description, price, image, maxParcels, stock);
+    int rate = 5;
+    return new Product(code, name, description, price, image, rate, maxParcels, stock);
   }
 
   public static CreditCard buildCreditCard(String cardNumber, String validateDate, String cvv) {

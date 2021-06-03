@@ -19,18 +19,29 @@ public abstract class ProductRepositoryAdapter implements ProductRepository {
 
   @Override
   public Paged<Product> findAllPaged(int page, int itemsPerPage) {
-    Page<ProductModel> pagedModel = findAllPagedBridge(page, itemsPerPage);
+    List<ProductModel> modelList;
+    long totalItems;
 
-    List<Product> products = pagedModel
-        .getContent()
-        .stream()
-        .map(modelAdapter::toEntity)
-        .collect(Collectors.toList());
+    if (itemsPerPage > 0) {
+      Page<ProductModel> pagedModel = findAllPagedBridge(page, itemsPerPage);
+      modelList = pagedModel.getContent();
+      totalItems = pagedModel.getTotalElements();
+    } else {
+      modelList = findAllBridge();
+      totalItems = modelList.size();
+    }
 
-    return new Paged<>(products, pagedModel.getTotalElements());
+    return new Paged<>(convertToProductList(modelList), totalItems);
   }
 
+  protected abstract List<ProductModel> findAllBridge();
   protected abstract Page<ProductModel> findAllPagedBridge(int page, int itemsPerPage);
+
+  private List<Product> convertToProductList(List<ProductModel> items) {
+    return items.stream()
+        .map(modelAdapter::toEntity)
+        .collect(Collectors.toList());
+  }
 
   @Override
   public Product findByCode(long code) {

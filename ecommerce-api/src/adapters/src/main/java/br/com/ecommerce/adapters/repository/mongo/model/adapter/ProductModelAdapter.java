@@ -14,6 +14,7 @@ public class ProductModelAdapter implements ModelAdapter<Product, ProductModel> 
     model.setDescription(entity.getDescription());
     model.setImage(entity.getImage());
     model.setPrice(entity.getPrice());
+    model.setRate(entity.getRate());
     model.setStock(entity.getStock());
     model.setMaxParcels(entity.getMaxParcels());
     return model;
@@ -22,7 +23,7 @@ public class ProductModelAdapter implements ModelAdapter<Product, ProductModel> 
   @Override
   public Product toEntity(ProductModel model) {
     return new Product(model.getCode(), model.getName(), model.getDescription(), model.getPrice(),
-        model.getImage(), model.getMaxParcels(), model.getStock());
+        model.getImage(), model.getRate(), model.getMaxParcels(), model.getStock());
   }
 
 }

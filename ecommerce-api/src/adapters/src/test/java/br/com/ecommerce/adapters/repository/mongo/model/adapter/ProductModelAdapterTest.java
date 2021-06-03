@@ -15,6 +15,7 @@ public class ProductModelAdapterTest {
     String description = "Product test description";
     double price = 20.23;
     String image = "url";
+    int rate = 3;
     int maxParcels = 10;
     int stock = 5;
 
@@ -24,6 +25,7 @@ public class ProductModelAdapterTest {
     model.setDescription(description);
     model.setPrice(price);
     model.setImage(image);
+    model.setRate(rate);
     model.setMaxParcels(maxParcels);
     model.setStock(stock);
 
@@ -34,6 +36,7 @@ public class ProductModelAdapterTest {
     Assertions.assertEquals(description, product.getDescription());
     Assertions.assertEquals(price, product.getPrice());
     Assertions.assertEquals(image, product.getImage());
+    Assertions.assertEquals(rate, product.getRate());
     Assertions.assertEquals(maxParcels, product.getMaxParcels());
     Assertions.assertEquals(stock, product.getStock());
   }
@@ -46,10 +49,11 @@ public class ProductModelAdapterTest {
     String description = "Product test description";
     double price = 20.23;
     String image = "url";
+    int rate = 5;
     int maxParcels = 10;
     int stock = 5;
 
-    Product product = new Product(code, name, description, price, image, maxParcels, stock);
+    Product product = new Product(code, name, description, price, image, rate, maxParcels, stock);
 
     ProductModel model = modelAdapter.toModel(product);
 
@@ -58,6 +62,7 @@ public class ProductModelAdapterTest {
     Assertions.assertEquals(description, model.getDescription());
     Assertions.assertEquals(price, model.getPrice());
     Assertions.assertEquals(image, model.getImage());
+    Assertions.assertEquals(rate, model.getRate());
     Assertions.assertEquals(maxParcels, model.getMaxParcels());
     Assertions.assertEquals(stock, model.getStock());
   }

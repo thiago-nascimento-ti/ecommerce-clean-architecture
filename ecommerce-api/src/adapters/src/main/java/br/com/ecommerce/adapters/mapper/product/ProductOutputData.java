@@ -10,6 +10,7 @@ public class ProductOutputData implements OutputMapper<Product, ProductOutputDat
   private String description;
   private double price;
   private String image;
+  private Integer rate;
   private Integer maxParcels;
   private Integer stock;
 
@@ -20,6 +21,7 @@ public class ProductOutputData implements OutputMapper<Product, ProductOutputDat
     description = entity.getDescription();
     price = entity.getPrice();
     image = entity.getImage();
+    rate = entity.getRate();
     maxParcels = entity.getMaxParcels();
     stock = entity.getStock();
     return this;
@@ -63,6 +65,14 @@ public class ProductOutputData implements OutputMapper<Product, ProductOutputDat
 
   public void setImage(String image) {
     this.image = image;
+  }
+
+  public Integer getRate() {
+    return rate;
+  }
+
+  public void setRate(Integer rate) {
+    this.rate = rate;
   }
 
   public Integer getMaxParcels() {
