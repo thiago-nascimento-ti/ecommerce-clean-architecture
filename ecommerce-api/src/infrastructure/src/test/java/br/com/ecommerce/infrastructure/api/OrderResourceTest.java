@@ -100,6 +100,7 @@ public class OrderResourceTest extends MongoContainer {
     Order order = createOrderInputData.toEntity();
     UUID id = orderService.create(order).getId();
     OrderOutputData expectedBody = new OrderOutputData().fromEntity(order);
+    expectedBody.getCreditCard().setHash("662147282");
 
     mvc.perform(get("/v1/orders/"+id))
         .andExpect(status().isOk())
