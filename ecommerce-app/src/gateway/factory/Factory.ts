@@ -12,7 +12,8 @@ import { CartJsonAdapter } from "../adapters";
 export class Factory {
 
   static createHttpCLient(): IHttpClient {
-    return new AxiosHttpClient("http://localhost:3001");
+    const host = process.env.REACT_APP_SERVER_HOST!!;
+    return new AxiosHttpClient(host);
   }
 
   static createProductRepository(): IProductRepository {

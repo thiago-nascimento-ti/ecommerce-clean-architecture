@@ -1,4 +1,4 @@
-import { TItem, TProduct, TCreditCard } from "../entities";
+import { TItem, TCreditCard } from "../entities";
 
 export interface ICheckoutRepository {
   finalize: (creditCard: TCreditCard, items: Array<TItem>) => Promise<TCheckoutResult>;
@@ -6,7 +6,7 @@ export interface ICheckoutRepository {
 
 export type TCheckoutResult = {
   status: CheckoutStatus
-  itemsWithInsuficientStock: Array<TProduct>
+  itemsWithInsuficientStock: Array<Number>
 }
 
 export enum CheckoutStatus {

@@ -1,4 +1,4 @@
-import { TItem, TCreditCard, TProduct } from "../../domain/entities"
+import { TItem, TCreditCard } from "../../domain/entities"
 import { ICheckoutRepository, TCheckoutResult, CheckoutStatus } from "../../domain/repositories"
 import { IHttpClient, HttpPost } from "../http";
 
@@ -11,13 +11,13 @@ export class CheckoutRestRepository implements ICheckoutRepository {
 
   async finalize(creditCard: TCreditCard, items: Array<TItem>): Promise<TCheckoutResult> {
     const params: HttpPost.Params = {
-      uri: `/checkout`,
+      uri: `/orders`,
       headers: {
         "content-type": "application/json"
       },
       body: {items, creditCard}
     };
-    const response = await this.httpClient.post<Array<TProduct>>(params);
+    const response = await this.httpClient.post<Array<Number>>(params);
 
     if (response.status === 201) {
       return Promise.resolve({

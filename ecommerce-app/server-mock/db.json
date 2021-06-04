@@ -1,0 +1,258 @@
+{
+  "products": [
+    {
+      "id": 3096034909,
+      "categoryId": 1,
+      "name": "Notebook Multilaser PC131 Legacy Cloud Intel Atom Z8350 2GB 32GB W10 14\"",
+      "description": "Notebook Multilaser PC131 Legacy Cloud Intel Atom Z8350 2GB 64GB W10 14\" Imagens Meramente Ilustrativas. Todas as informações divulgadas são de responsabilidade do fabricante/fornecedor.",
+      "price": 1599.9,
+      "image": "https://i.imgur.com/I6xRa02.png",
+      "rate": 2.5,
+      "maxParcelas": 12,
+      "stock": 5
+    },
+    {
+      "id": 7823159138,
+      "categoryId": 1,
+      "name": "Controle Xbox One Entrada P2 Modelo Novo Preto Com Cabo",
+      "description": "Controle Xbox One S Wireless E Bluetooth Original PretoControle xbox one s sem fio preto wireless original 1708 microsoft Controle Xbox One MicrosoftNovo lacrado de fábrica100% original.",
+      "price": 489.9,
+      "image": "https://i.imgur.com/w5i4Ot0.png",
+      "rate": 4,
+      "maxParcelas": 1,
+      "stock": 100
+    },
+    {
+      "id": 7215484564,
+      "categoryId": 1,
+      "name": "New Nintendo Switch Azul e Vermelho Neon",
+      "description": "A Nintendo anunciou um modelo atualizado do console que difere do modelo original na longevidade da bateria.Enquanto o modelo original da Nintendo Switch tem uma bateria que dura entre 2.5 a 6.5 horas.",
+      "price": 2639.9,
+      "image": "https://i.imgur.com/dRMc8Y4.png",
+      "rate": 4,
+      "maxParcelas": 12,
+      "stock": 2
+    },
+    {
+      "id": 5285834063,
+      "categoryId": 1,
+      "name": "Mario Kart 8 Deluxe - Nintendo Switch",
+      "description": "- JOGO EM INGLÊS- 8 JOGADORES OFFLINE- 12 JOGADORES ONLINEMARIO KART 8 DELUXE é um dos jogos lançamentos do Nintendo Switch. Lançado anteriormente para o Nintendo Wii U, essa versão pode ser chamada de edição completa.",
+      "price": 469.89,
+      "image": "https://i.imgur.com/CIKXnBh.png",
+      "rate": 5,
+      "maxParcelas": 3,
+      "stock": 7
+    },
+    {
+      "id": 7949865703,
+      "categoryId": 1,
+      "name": "Smartphone Samsung Galaxy A01 Core 32GB 4G Wi-Fi Tela 5.3'' Dual Chip 2GB RAM Câmera 8MP + Selfie 5MP - Vermelho",
+      "description": "O Smartphone Samsung Galaxy A01 é ideal para você que não abre mão de ter à disposição um item tecnológico. Com design fino, criado exclusivamente para que você tenha muito mais conforto ao utilizar, é muito mais moderno e atraente.",
+      "price": 538.47,
+      "image": "https://i.imgur.com/vtvHDpg.png",
+      "rate": 3.5,
+      "maxParcelas": 3,
+      "stock": 20
+    },
+    {
+      "id": 3163634337,
+      "categoryId": 1,
+      "name": "Smartphone Samsung Galaxy A11 64GB 4G Wi-Fi Tela 6.4'' Dual Chip 3GB RAM Câmera Tripla + Selfie 8MP - Azul",
+      "description": "O Smartphone Samsung Galaxy A11 é o item perfeito para quem gosta de tela grande! Com display Infinito de 6.4 polegadas do Galaxy A11, possui uma proporção ampla que preenche sua tela com conteúdos de ponta a ponta.",
+      "price": 929.07,
+      "image": "https://i.imgur.com/13Hcj9C.png",
+      "rate": 4,
+      "maxParcelas": 6,
+      "stock": 3
+    },
+    {
+      "id": 6580937054,
+      "categoryId": 1,
+      "name": "Controle Dualsense PlayStation®5 - PS5",
+      "description": "Eleve seus sentidos e descubra uma experiência mais profunda e imersiva, que dá vida à ação nas palmas das suas mãos com o Controle sem Fio DualSense™ PlayStation® Com alta tecnologia, ele é revolucionário em seu design e performa.",
+      "price": 448.99,
+      "image": "https://i.imgur.com/yYWeEWW.png",
+      "rate": 5,
+      "maxParcelas": 1,
+      "stock": 1
+    },
+    {
+      "id": 7528877106,
+      "categoryId": 1,
+      "name": "Headset Sem Fio Sony Playstation 5 - PS5",
+      "description": "Chegou a hora de desfrutar o máximo da experiência sem fio, com o Headset Sem Fio PULSE 3D™ - PS5, que possui o verdadeiro som que os games merecem. Com design moderno e áudio 3D, possui dois microfones com cancelamento de ruído.",
+      "price": 599.9,
+      "image": "https://i.imgur.com/D16kJE9.png",
+      "rate": 4.5,
+      "maxParcelas": 1,
+      "stock": 8
+    },
+    {
+      "id": 6266631312,
+      "categoryId": 1,
+      "name": "Notebook Dell Inspiron 3501-U45P 15.6\" HD 11ª Geração Intel Core i5 8GB 256GB SSD Linux Preto",
+      "description": "APROVEITE AO MÁXIMO O SEU DIA COM O NOVO INSPIRON 15 3000!Processadores eficientes: possui uma capacidade de resposta incrível que permite a realização de tarefas simultâneas de forma tranquila e sem problemas.Memória e armazenamento.",
+      "price": 4149,
+      "image": "https://i.imgur.com/p13wBAs.png",
+      "rate": 0,
+      "maxParcelas": 12,
+      "stock": 2
+    },
+    {
+      "id": 5727542951,
+      "categoryId": 1,
+      "name": "Kit Notebook Dell Inspiron 3501-M45SS 15.6\" HD 11ª Ger. Intel Core i5 8GB 256GB SSD Windows 10 Prata + Capa Essentia",
+      "description": "APROVEITE AO MÁXIMO O SEU DIA COM O NOVO INSPIRON 15 3000!Memória e armazenamento pensados para o dia a dia: alterne facilmente entre aplicativos abertos com 8 GB de memória.Faça tudo com eficiência: os mais recentes processadores.",
+      "price": 4970,
+      "image": "https://i.imgur.com/AT1CKXz.png",
+      "rate": 5,
+      "maxParcelas": 12,
+      "stock": 12
+    },
+    {
+      "id": 5678368530,
+      "categoryId": 1,
+      "name": "Phone 12 Pro Apple (256GB) Prateado tela 6,1\" Câmera tripla 12MP iOS",
+      "description": "",
+      "price": 8183.07,
+      "image": "https://i.imgur.com/cmwTAWL.png",
+      "rate": 5,
+      "maxParcelas": 12,
+      "stock": 3
+    },
+    {
+      "id": 7113984583,
+      "categoryId": 1,
+      "name": "Geladeira/Refrigerador French Door Electrolux 579l Dm84x Inox 110v",
+      "description": "Preserve seus alimentos com muito mais eficiência e economia com a Geladeira / Refrigerador Electrolux French Door. Com designer moderno e funções pensadas para manter seus alimentos fresquinhos por muito mais tempo.",
+      "price": 5299.9,
+      "image": "https://i.imgur.com/GdvcZzt.png",
+      "rate": 4.5,
+      "maxParcelas": 12,
+      "stock": 1
+    },
+    {
+      "id": 3888485474,
+      "categoryId": 1,
+      "name": "Refrigerador Side by Side SS72X 504L Titanium 110V - Electrolux",
+      "description": "Com Painel Blue Touch, Water Dispenser e Ice Maker, o Refrigerador Side by Side SS72X oferece água filtrada, gelo em cubo ou picado a toda hora, sem precisar abrir a porta do refrigerador. As resistentes prateleiras de Vidro Temperado.",
+      "price": 7999,
+      "image": "https://i.imgur.com/65AcMr0.png",
+      "rate": 5,
+      "maxParcelas": 12,
+      "stock": 10
+    },
+    {
+      "id": 4770262101,
+      "categoryId": 1,
+      "name": "Lava e Seca LG VC4 10,5kg Aço Escovado CV5010TS4 - 110V",
+      "description": "Lava e Seca LG VC4 10,5kg Aço Escovado CV5010TS4AI DD¿Proteção até 18% maior dos tecidosA tecnologia AI DD, detecta não apenas o peso da sua roupa, mas também a textura dos tecidos, proporcionando o mais otimizado movimento de lavagem.",
+      "price": 3356.65,
+      "image": "https://i.imgur.com/ipodqh3.png",
+      "rate": 4,
+      "maxParcelas": 12,
+      "stock": 9
+    },
+    {
+      "id": 7808945188,
+      "categoryId": 1,
+      "name": "Jogo EFootball PES 2021 - PS4",
+      "description": "Além do já famoso gameplay da franquia, eFootaball PES 2021 conta com todas as atualizações de jogadores e clubes da nova temporada, com conteúdo antecipado do torneio da vida real.",
+      "price": 79.9,
+      "image": "https://i.imgur.com/tczNefH.png",
+      "rate": 4.2,
+      "maxParcelas": 1,
+      "stock": 90
+    },
+    {
+      "id": 4130116936,
+      "categoryId": 1,
+      "name": "Game Cyber Punk 2077 - PS4",
+      "description": "Cyberpunk 2077 é uma história de ação e aventura em mundo aberto que se passa em Night City, uma megalópole obcecada pelo poder, glamour e modificações biológicas. Você controla V, um mercenário fora da lei em busca de um implante.",
+      "price": 68.99,
+      "image": "https://i.imgur.com/fsFr1kx.png",
+      "rate": 3.2,
+      "maxParcelas": 1,
+      "stock": 200
+    },
+    {
+      "id": 5645637958,
+      "categoryId": 1,
+      "name": "Game Grand Theft Auto V Premium Online Edition - PS4",
+      "description": "Grand Theft auto V! Entre nas vidas de três criminosos muito diferentes, Michael, Franklin e Trevor, enquanto eles arriscam tudo em uma série de assaltos ousados que podem garantir o resto de suas vidas.",
+      "price": 139.99,
+      "image": "https://i.imgur.com/DWFgieY.png",
+      "rate": 5,
+      "maxParcelas": 1,
+      "stock": 35
+    },
+    {
+      "id": 5309107155,
+      "categoryId": 1,
+      "name": "Jogo Red Dead Redemption 2 - PS4",
+      "description": "Estados Unidos, 1899. O fim da era do velho oeste começou, e as autoridades estão caçando as últimas gangues de fora da lei que restam.",
+      "price": 160.92,
+      "image": "https://i.imgur.com/3Gsi4iW.png",
+      "rate": 5,
+      "maxParcelas": 1,
+      "stock": 17
+    },
+    {
+      "id": 7490727218,
+      "categoryId": 1,
+      "name": "Game The Last Of Us Part II - PS4",
+      "description": "",
+      "price": 179.9,
+      "image": "https://i.imgur.com/GMDUKBF.png",
+      "rate": 5,
+      "maxParcelas": 1,
+      "stock": 90
+    },
+    {
+      "id": 4867811335,
+      "categoryId": 1,
+      "name": "Jogo God Of War - PS4",
+      "description": "",
+      "price": 59.9,
+      "image": "https://i.imgur.com/XC5dPKF.png",
+      "rate": 4.9,
+      "maxParcelas": 1,
+      "stock": 8
+    },
+    {
+      "id": 5753549890,
+      "categoryId": 1,
+      "name": "Game Resident Evil Village Br - PS4",
+      "description": "Experimente o terror de sobrevivência como nunca antes em Resident Evil Village, que utilizará o poder do PlayStation 5 e do Xbox Series X para elevar cada luta desesperada pela sobrevivência.",
+      "price": 269.99,
+      "image": "https://i.imgur.com/fPDiXjT.png",
+      "rate": 4.6,
+      "maxParcelas": 3,
+      "stock": 5
+    },
+    {
+      "id": 3265628330,
+      "categoryId": 1,
+      "name": "Console Nintendo Switch 32GB bundle Animal Crossing -COR Verde/azul Pastel (versão SERIE especial)",
+      "description": "Console Nintendo Switch 32GB bundle Animal Crossing -COR Verde/azul Pastel (versão SERIE especial)O Nintendo Switch é um híbrido entre console de mesa e portátil, ou seja, você pode escolher se quer jogar na TV da sua casa ou preferência.",
+      "price": 3239,
+      "image": "https://i.imgur.com/RcDhRwT.png",
+      "rate": 5,
+      "maxParcelas": 12,
+      "stock": 2
+    },
+    {
+      "id": 8999667378,
+      "categoryId": 1,
+      "name": "Nintendo Switch Pro Controller Sem Fio Bluetooth EastVita",
+      "description": "",
+      "price": 349.9,
+      "image": "https://i.imgur.com/rLoz1ai.png",
+      "rate": 4.5,
+      "maxParcelas": 5,
+      "stock": 7
+    }
+  ],
+  "orders": []
+}

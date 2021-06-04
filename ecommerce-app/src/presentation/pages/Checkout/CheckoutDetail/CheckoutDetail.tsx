@@ -70,9 +70,11 @@ const CheckoutDetail: React.FC<Props> = ({ cart }) => {
   }
 
   const onSubmit = handleSubmit(values => {
-    console.log(values)
     const date = new Date(values.validateDate);
-    const validateDate = `${date.getFullYear()}-${date.getMonth()+1}`;
+
+    const month = date.getMonth()+1;
+    let formatedMonth = (month < 10) ? "0"+month : month;
+    const validateDate = `${date.getFullYear()}-${formatedMonth}`;
     const creditCart = {...values, validateDate};
 
     dispatch(checkout(

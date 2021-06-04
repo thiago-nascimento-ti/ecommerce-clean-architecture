@@ -1,4 +1,4 @@
-import { TCreditCard, TCart, TProduct } from '../entities';
+import { TCreditCard, TCart } from '../entities';
 import { ICheckoutRepository, CheckoutStatus } from '../repositories';
 
 export class ConfirmCheckoutUseCase {
@@ -27,9 +27,9 @@ export class InvalidCardError extends Error {
 }
 
 export class InsuficientStockError extends Error {
-  itemsWithInsuficientStock: Array<TProduct>
+  itemsWithInsuficientStock: Array<Number>
 
-  constructor(itemsWithInsuficientStock: Array<TProduct>) {
+  constructor(itemsWithInsuficientStock: Array<Number>) {
     super(`${itemsWithInsuficientStock.length} products does not have enough stock`)
     this.itemsWithInsuficientStock = itemsWithInsuficientStock;
   }
