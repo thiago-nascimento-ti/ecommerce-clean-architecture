@@ -5,23 +5,19 @@ import br.com.ecommerce.core.exception.NotFoundException;
 import br.com.ecommerce.core.service.ProductService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.mongodb.client.MongoCollection;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
-import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.util.ResourceUtils;
 
 @SpringBootApplication
 public class Application {
@@ -50,9 +46,13 @@ public class Application {
     }
   }
 
-  private String loadDefaultJsonDataFile() throws IOException {
-    File file = ResourceUtils.getFile("classpath:defaultData.json");
-    return new String(Files.readAllBytes(file.toPath()));
+  private String loadDefaultJsonDataFile() {
+    InputStream inputStream = Application.class.getResourceAsStream("/mongo/defaultData.json");
+    String text = new BufferedReader(
+        new InputStreamReader(inputStream, StandardCharsets.UTF_8))
+        .lines()
+        .collect(Collectors.joining("\n"));
+    return text;
   }
 
   private List<CreateProductInputData> convertToListOfProducts(String content) {
