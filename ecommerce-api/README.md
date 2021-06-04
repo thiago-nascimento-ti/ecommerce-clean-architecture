@@ -2,7 +2,7 @@
 
 ### Rodando o projeto com docker-compose
 
-Com essa opção não é necesário instalar o Java, gradle e nem o MongoDB, basta ter o docker compose.
+Com essa opção não é necesário instalar o Java, gradle e nem o MongoDB, basta ter o docker compose, o dados de produtos iniciais já serão carregados no banco.
 
 ```
 docker-compose build && docker-compose up
