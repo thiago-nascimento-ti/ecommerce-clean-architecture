@@ -5,7 +5,7 @@
 Com essa opção não é necesário instalar o Java, gradle e nem o MongoDB, basta ter o docker compose.
 
 ```
-docker-compose up
+docker-compose build && docker-compose up
 ```
 
 ### Rodando o projeto com gradle (Opcional)

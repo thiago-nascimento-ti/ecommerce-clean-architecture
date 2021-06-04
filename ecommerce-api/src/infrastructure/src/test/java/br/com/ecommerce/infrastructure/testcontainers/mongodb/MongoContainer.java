@@ -29,17 +29,15 @@ public class MongoContainer implements ContainerTest {
 
   @BeforeEach
   public void beforeEach() {
-
-  }
-
-  @AfterEach
-  public void afterEach() {
     mongoTemplate.getCollectionNames().forEach(name -> {
       MongoCollection<Document> collection = mongoTemplate.getCollection(name);
       Bson filterAll = new Document();
       collection.deleteMany(filterAll);
     });
   }
+
+  @AfterEach
+  public void afterEach() {}
 
   public MongoTemplate getMongoTemplate() {
     return mongoTemplate;

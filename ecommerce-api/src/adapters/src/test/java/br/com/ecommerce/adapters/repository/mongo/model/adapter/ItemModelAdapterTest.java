@@ -47,7 +47,7 @@ public class ItemModelAdapterTest {
     String description = "Product test description";
     double price = 20.23;
     String image = "url";
-    int rate = 5;
+    double rate = 5D;
     int maxParcels = 10;
     int stock = 10;
     int amount = 5;

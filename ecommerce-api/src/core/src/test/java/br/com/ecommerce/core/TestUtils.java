@@ -22,7 +22,7 @@ public class TestUtils {
     double price = 20.20;
     String image = "url";
     int maxParcels = 10;
-    int rate = 5;
+    double rate = 5D;
     return new Product(code, name, description, price, image, rate, maxParcels, stock);
   }
 

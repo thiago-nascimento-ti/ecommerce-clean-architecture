@@ -235,7 +235,7 @@ public class OrderResourceTest extends MongoContainer {
     inputData.setDescription("Description Test");
     inputData.setPrice(4149);
     inputData.setImage("url");
-    inputData.setRate(5);
+    inputData.setRate(5D);
     inputData.setMaxParcels(12);
     inputData.setStock(5);
     return inputData;

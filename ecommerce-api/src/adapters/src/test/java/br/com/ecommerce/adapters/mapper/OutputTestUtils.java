@@ -7,13 +7,13 @@ import br.com.ecommerce.core.entity.Product;
 public class OutputTestUtils {
 
   public static Product buildProduct() {
-    int rate = 5;
+    double rate = 5D;
     int maxParcels = 10;
     int stock = 5;
     return buildProduct(rate, maxParcels, stock);
   }
 
-  public static Product buildProduct(Integer rate, Integer maxParcels, Integer stock) {
+  public static Product buildProduct(Double rate, Integer maxParcels, Integer stock) {
     long code = 1123123123L;
     String name = "Product test";
     String description = "Product test description";

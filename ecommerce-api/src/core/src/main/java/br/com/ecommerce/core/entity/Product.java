@@ -9,7 +9,7 @@ public class Product {
   private final String description;
   private final double price;
   private final String image;
-  private final Integer rate;
+  private final Double rate;
   private final Integer maxParcels;
   private Integer stock;
 
@@ -18,7 +18,7 @@ public class Product {
   }
 
   public Product(long code, String name, String description, double price, String image,
-      Integer rate,
+      Double rate,
       Integer maxParcels, Integer stock) {
     this.code = code;
     this.name = name;
@@ -46,7 +46,7 @@ public class Product {
     return price;
   }
 
-  public Integer getRate() {
+  public Double getRate() {
     return rate;
   }
 

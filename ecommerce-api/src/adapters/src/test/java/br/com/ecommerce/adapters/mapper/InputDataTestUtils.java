@@ -35,7 +35,7 @@ public class InputDataTestUtils {
     createProductInputData.setImage("url");
     createProductInputData.setStock(2);
     createProductInputData.setMaxParcels(10);
-    createProductInputData.setRate(5);
+    createProductInputData.setRate(5D);
     return createProductInputData;
   }
 

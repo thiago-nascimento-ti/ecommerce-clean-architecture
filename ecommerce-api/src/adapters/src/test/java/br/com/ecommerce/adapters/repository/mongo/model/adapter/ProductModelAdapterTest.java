@@ -15,7 +15,7 @@ public class ProductModelAdapterTest {
     String description = "Product test description";
     double price = 20.23;
     String image = "url";
-    int rate = 3;
+    double rate = 3D;
     int maxParcels = 10;
     int stock = 5;
 
@@ -49,7 +49,7 @@ public class ProductModelAdapterTest {
     String description = "Product test description";
     double price = 20.23;
     String image = "url";
-    int rate = 5;
+    double rate = 5D;
     int maxParcels = 10;
     int stock = 5;
 

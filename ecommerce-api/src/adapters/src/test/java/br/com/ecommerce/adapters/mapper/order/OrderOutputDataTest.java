@@ -17,7 +17,7 @@ public class OrderOutputDataTest {
     List<OrderItem> items = new ArrayList<>();
     for (int i = 0; i < 2; i++) {
       Product product = new Product(1123123123L, "Item test", "Item test description", 5.23, "url",
-          3, 5, 2);
+          3D, 5, 2);
       OrderItem item = new OrderItem(product, 2);
       items.add(item);
     }
