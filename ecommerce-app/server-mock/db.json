@@ -254,5 +254,32 @@
       "stock": 7
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "items": [
+        {
+          "product": {
+            "id": 3096034909,
+            "categoryId": 1,
+            "name": "Notebook Multilaser PC131 Legacy Cloud Intel Atom Z8350 2GB 32GB W10 14\"",
+            "description": "Notebook Multilaser PC131 Legacy Cloud Intel Atom Z8350 2GB 64GB W10 14\" Imagens Meramente Ilustrativas. Todas as informações divulgadas são de responsabilidade do fabricante/fornecedor.",
+            "price": 1599.9,
+            "image": "https://i.imgur.com/I6xRa02.png",
+            "rate": 2.5,
+            "maxParcelas": 12,
+            "stock": 5
+          },
+          "amount": 5
+        }
+      ],
+      "creditCard": {
+        "parcelAmount": 1,
+        "cvv": "332",
+        "validateDate": "2021-06",
+        "name": "teewa",
+        "cardNumber": "1231232132131221"
+      },
+      "id": 1
+    }
+  ]
 }

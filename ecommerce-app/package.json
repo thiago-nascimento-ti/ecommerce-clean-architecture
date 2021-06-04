@@ -30,9 +30,8 @@
   },
   "scripts": {
     "start": "env-cmd -f ./.env react-scripts start",
-    "mock": "env-cmd -f ./.env.mock react-scripts start",
     "build": "env-cmd -f ./.env react-scripts build",
-    "mock-server": "json-server --watch ./server-mock/db.json --port 3001",
+    "mock-server": "json-server --watch ./server-mock/db.json --port 8080 --routes ./server-mock/routes.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
