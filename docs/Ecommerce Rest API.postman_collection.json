@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "160826b1-f881-4025-b6df-9c2d707d8a3a",
+		"name": "Ecommerce Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products/{{id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"id\": 6580937054,\n      \"categoryId\": 1,\n      \"name\": \"Controle Dualsense PlayStation®5 - PS5\",\n      \"description\": \"Eleve seus sentidos e descubra uma experiência mais profunda e imersiva, que dá vida à ação nas palmas das suas mãos com o Controle sem Fio DualSense™ PlayStation® Com alta tecnologia, ele é revolucionário em seu design e performa.\",\n      \"price\": 448.99,\n      \"image\": \"https://images-americanas.b2w.io/produtos/01/00/img/1838060/8/1838060841_1GG.jpg\",\n      \"rate\": 5,\n      \"maxParcelas\": 1,\n      \"stock\": 1\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/orders/{{orderId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"{{orderId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creditCard\": {\n        \"parcelAmount\": 1,\n        \"cvv\": \"312\",\n        \"validateDate\": \"2021-12\",\n        \"name\": \"1231231232131231\",\n        \"cardNumber\": \"3213123213213213\"\n    },\n    \"items\": [\n        {\n            \"amount\": 5,\n            \"product\": {\n                \"id\": 3096034909,\n                \"name\": \"Notebook Multilaser PC131 Legacy Cloud Intel Atom Z8350 2GB 32GB W10 14\\\"\",\n                \"description\": \"Notebook Multilaser PC131 Legacy Cloud Intel Atom Z8350 2GB 64GB W10 14\\\" Imagens Meramente Ilustrativas. Todas as informações divulgadas são de responsabilidade do fabricante/fornecedor.\",\n                \"image\": \"https://i.imgur.com/I6xRa02.png\",\n                \"price\": 1599.9\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
