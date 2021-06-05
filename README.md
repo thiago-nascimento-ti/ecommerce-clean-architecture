@@ -67,7 +67,7 @@ Na pagina de produtos temos alguns recursos implementados.
 6. Após pressionar `Fechar pedido` as validações devem ser aplicadas e qualquer alteração no campo será atualizado as mensagens de validações.
 7. Após pressionar `Fechar pedido` com todos os campos corretos o pedido será enviado e armazenado no banco de dados, um modal confirmando a compra será mostrado, o carrinho será zerado e o usuário redirecionado para a home.
 
-Validações de Backend:
+##### Validações de Backend
 1. o `numero do cartão` `1234 1234 1234 1234` será sempre considerado inválido, qualquer outro numero com 16 dígitos será considerado correto.
 2. o `cvv` `123`  será sempre considerado inválido, qualquer outro numero com 3 dígitos será considerado correto.
 3. a `validade do cartão` será considerado válido desde que seja do mês atual ou futuro, qualquer mês/ano passado será considerado errado.
