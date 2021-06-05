@@ -86,7 +86,7 @@ const CheckoutDetail: React.FC<Props> = ({ cart }) => {
   });
 
   const maxParcels = cart.items.reduce(
-    (max, {product:{maxParcelas}}) => max < maxParcelas ? maxParcelas : max,
+    (max, {product:{maxParcels}}) => max < maxParcels ? maxParcels : max,
   1)
   const parcels: Array<number> = []
   for (let parcel = 1; parcel <= maxParcels; parcel++) {

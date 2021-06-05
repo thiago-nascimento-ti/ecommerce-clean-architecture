@@ -1,0 +1,23 @@
+{
+  "name": "api-gateway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "env-cmd -f ./.env npx tsc && node dist/main",
+    "dev": "env-cmd -f ./.env nodemon --watch src -e ts --exec \"npx tsc && node dist/main\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "apollo-server": "^2.25.0",
+    "axios": "^0.21.1",
+    "graphql": "^15.5.0"
+  }
+}

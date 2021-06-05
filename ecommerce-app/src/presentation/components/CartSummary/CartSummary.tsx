@@ -7,7 +7,7 @@ type Props = {
 };
 const CartSummary: React.FC<Props> = ({ cart }) => {
   const maxParcels = cart.items.reduce(
-    (max, {product:{maxParcelas}}) => max < maxParcelas ? maxParcelas : max,
+    (max, {product:{maxParcels}}) => max < maxParcels ? maxParcels : max,
   1)
 
   return <CartSummaryView {...{ cart, maxParcels }}/>

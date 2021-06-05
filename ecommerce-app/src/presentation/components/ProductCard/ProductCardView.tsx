@@ -26,7 +26,7 @@ const ProductView: React.FC<Props> = ({ product, onPressProduct, onAddToCart }) 
             <div>
               <Rate value={product.rate} disabled />
               <h3>R$ {product.price.toFixed(2).replace(".", ",")}</h3>
-              <p>em {product.maxParcelas}x no cartão de crédito</p>
+              <p>em {product.maxParcels}x no cartão de crédito</p>
             </div>
           }
         />

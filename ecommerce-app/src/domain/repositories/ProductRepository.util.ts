@@ -32,7 +32,7 @@ export const MEMORY_PRODUCTS = [
     "price": 3.5,
     "image": "https://i.imgur.com/LKbbq4W.png",
     "rate": 3,
-    "maxParcelas": 1
+    "maxParcels": 1
   },
   {
     "id": 2,
@@ -42,7 +42,7 @@ export const MEMORY_PRODUCTS = [
     "price": 3.0,
     "image": "https://i.imgur.com/LKbbq4W.png",
     "rate": 3.5,
-    "maxParcelas": 1
+    "maxParcels": 1
   },
   {
     "id": 3,
@@ -52,7 +52,7 @@ export const MEMORY_PRODUCTS = [
     "price": 4.35,
     "image": "https://i.imgur.com/LKbbq4W.png",
     "rate": 5,
-    "maxParcelas": 1
+    "maxParcels": 1
   },
   {
     "id": 4,
@@ -62,7 +62,7 @@ export const MEMORY_PRODUCTS = [
     "price": 4.59,
     "image": "https://i.imgur.com/LKbbq4W.png",
     "rate": 2,
-    "maxParcelas": 1
+    "maxParcels": 1
   },
   {
     "id": 5,
@@ -72,7 +72,7 @@ export const MEMORY_PRODUCTS = [
     "price": 2.5,
     "image": "https://i.imgur.com/LKbbq4W.png",
     "rate": 4.5,
-    "maxParcelas": 1
+    "maxParcels": 1
   },
   {
     "id": 6,
@@ -82,7 +82,7 @@ export const MEMORY_PRODUCTS = [
     "price": 2.5,
     "image": "https://i.imgur.com/LKbbq4W.png",
     "rate": 1,
-    "maxParcelas": 1
+    "maxParcels": 1
   },
   {
     "id": 7,
@@ -92,6 +92,6 @@ export const MEMORY_PRODUCTS = [
     "price": 1.89,
     "image": "https://i.imgur.com/LKbbq4W.png",
     "rate": 5,
-    "maxParcelas": 1
+    "maxParcels": 1
   }
 ]
