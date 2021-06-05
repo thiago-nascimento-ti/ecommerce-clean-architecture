@@ -1,5 +1,7 @@
 # Ecommerce API
 
+API Rest do projeto Ecommerce
+
 ## Rodando o projeto com docker-compose
 
 Com essa opção não é necessário instalar o Java, gradle e nem o MongoDB, basta ter o docker compose, os dados de produtos iniciais já serão carregados no banco.
