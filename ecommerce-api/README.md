@@ -45,7 +45,7 @@ Rorando o checkstyle
 
 
 ### Arquitetura
-Foi utilizado clean-architecture para desacopalhar as regras de negócios de depêndecias externas como banco de dados, frameworks (Spring) e biblíotecas, mantendo a parte a camada core o mais pura possível apenas utilizando de Java puro e bibliotecas de testes.
+Foi utilizado clean-architecture para desacopalhar as regras de negócios de depêndecias externas como banco de dados, frameworks (Spring) e biblíotecas, mantendo a parte a camada core o mais pura possível apenas utilizando de Java e bibliotecas de testes.
 
 ![GitHub Logo](/images/ecommerce-api-architecture.png)
 
