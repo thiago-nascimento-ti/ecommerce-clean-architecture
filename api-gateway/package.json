@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "env-cmd -f ./.env npx tsc && node dist/main",
+    "start": "npx tsc && env-cmd -f ./.env node dist/main",
     "dev": "env-cmd -f ./.env nodemon --watch src -e ts --exec \"npx tsc && node dist/main\""
   },
   "keywords": [],

@@ -10,7 +10,7 @@ export type TCheckoutResult = {
 }
 
 export enum CheckoutStatus {
-  InvalidCreditCard,
-  InsuficientStock,
-  Successful
+  InvalidCreditCard = "InvalidCreditCard",
+  InsuficientStock = "InsuficientStock",
+  Successful = "Successful"
 }

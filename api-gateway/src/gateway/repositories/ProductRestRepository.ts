@@ -25,7 +25,7 @@ export class ProductRestRepository implements IProductRepository {
     const params: HttpGet.Params = {
       uri: `/products/${id}`
     };
-    return (await this.httpClient.get<TProduct>(params)).data;
+    return await (await this.httpClient.get<TProduct>(params)).data;
   }
 
   async getProductStock({ id }: TProduct): Promise<number> {

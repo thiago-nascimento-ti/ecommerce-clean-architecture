@@ -6,7 +6,6 @@ export class Factory {
 
   static createHttpCLient(): IHttpClient {
     const host = process.env.REACT_APP_SERVER_HOST!!;
-    console.log(host)
     return new AxiosHttpClient(host);
   }
 
