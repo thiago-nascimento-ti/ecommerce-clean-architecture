@@ -1,2 +1,2 @@
-export * from "./ProductRestRepository"
-export * from "./CheckoutRestRepository"
+export * from "./ProductGraphQLRepository"
+export * from "./CheckoutGraphQLRepository"
