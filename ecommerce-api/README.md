@@ -102,6 +102,7 @@ Representa um DTO de saída de dados e estende de OutputMapper, implementando a 
 Representa um DTO de entrada de dados e estende de InputMapper, implementando a lógica de conversão de InputData para a entidade de negócio.
 
 ### Infrastructure
+Nessa camada mantemos todas as dependências de bibliotecas, frameworks ou estruturas externas.
 
 ##### MongoRepository
 
