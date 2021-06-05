@@ -1,0 +1,5 @@
+{
+  "/api/v1/products": "/products",
+  "/api/v1/products/:id": "/products/:id",
+  "/api/v1/orders": "/orders"
+}
