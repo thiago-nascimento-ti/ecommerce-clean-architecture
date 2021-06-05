@@ -15,9 +15,7 @@ export class CheckoutGraphQLRepository implements ICheckoutRepository {
       product: {id, name, description, image, price}
     }))
     const mutation = checkoutPM.get({creditCard, items: checkoutItems});
-    const checkout = (await this.graphQLClient.execute<CheckoutResultData, TCheckoutVariables>(mutation)).checkout;
-    console.log(checkout)
-    return checkout
+    return (await this.graphQLClient.execute<CheckoutResultData, TCheckoutVariables>(mutation)).checkout;
   }
 }
 
