@@ -17,7 +17,7 @@ export class CheckoutRestRepository implements ICheckoutRepository {
       },
       body: {items, creditCard}
     };
-    const response = await this.httpClient.post<Array<Number>>(params);
+    const response = await this.httpClient.post<InsuficientStockError>(params);
 
     if (response.status === 201) {
       return Promise.resolve({
@@ -28,7 +28,7 @@ export class CheckoutRestRepository implements ICheckoutRepository {
     if (response.status === 400) {
       return Promise.resolve({
         status: CheckoutStatus.InsuficientStock, 
-        itemsWithInsuficientStock: response.data
+        itemsWithInsuficientStock: response.data.codes
       });
     }
     if (response.status === 402) {
@@ -40,4 +40,10 @@ export class CheckoutRestRepository implements ICheckoutRepository {
     throw new Error(`Unexpected error: ${response.status}`);
   }
 
+}
+
+
+type InsuficientStockError = {
+  message: String
+  codes: Array<Number>
 }
