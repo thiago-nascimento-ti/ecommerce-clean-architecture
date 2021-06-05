@@ -1,7 +1,7 @@
-import { TCart, IItem, TProduct, SubtractItemAmountError } from '../entities';
-import { AddProductOnCartUseCase } from './AddProductOnCartUseCase';
-import { SubtractProductOfCartUseCase } from './SubtractProductOfCartUseCase';
-import { FakeProductRepository } from '../repositories/ProductRepository.util';
+import { TCart, IItem, TProduct, SubtractItemAmountError } from "../entities";
+import { AddProductOnCartUseCase } from "./AddProductOnCartUseCase";
+import { SubtractProductOfCartUseCase } from "./SubtractProductOfCartUseCase";
+import { FakeProductRepository } from "../repositories/ProductRepository.util";
 
 describe('subtract product of cart use case', () => {
   const productRepository: FakeProductRepository = new FakeProductRepository();
@@ -14,7 +14,7 @@ describe('subtract product of cart use case', () => {
 
   it('should recalculate when subtract product amount', async () => {
     const cart: TCart = new TCart();
-    const product: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3}
+    const product: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3, maxParcels: 1}
 
     await addProductOnCartUseCase.execute(cart, product, 5);
     subtractProductOfCartUseCase.execute(cart, product, 2);
@@ -26,7 +26,7 @@ describe('subtract product of cart use case', () => {
 
   it('should remove product from cart when subtract product amount to zero', async () => {
     const cart: TCart = new TCart();
-    const product: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3}
+    const product: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3, maxParcels: 1}
 
     await addProductOnCartUseCase.execute(cart, product, 5);
     subtractProductOfCartUseCase.execute(cart, product, 5);
@@ -38,7 +38,7 @@ describe('subtract product of cart use case', () => {
 
   it('should throw SubtractItemAmountError when try to remove not enough amount of product', async () => {
     const cart: TCart = new TCart();
-    const product: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3}
+    const product: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3, maxParcels: 1}
 
     await addProductOnCartUseCase.execute(cart, product, 1);
   

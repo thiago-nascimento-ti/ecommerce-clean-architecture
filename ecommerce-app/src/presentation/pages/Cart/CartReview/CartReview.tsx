@@ -1,6 +1,6 @@
 import React from "react";
-import { ICart } from '../../../../domain/entities';
-import useRoutes from '../../../hooks/useRoutes';
+import { ICart } from "../../../../domain/entities";
+import useRoutes from "../../../hooks/useRoutes";
 import CartReviewView from "./CartReviewView";
 import { showErrorModal } from "../../../components/Message";
 

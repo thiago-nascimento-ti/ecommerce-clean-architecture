@@ -1,5 +1,5 @@
-import { TCart, TProduct } from '../entities';
-import { IProductRepository } from '../repositories';
+import { TCart, TProduct } from "../entities";
+import { IProductRepository } from "../repositories";
 
 export class AddProductOnCartUseCase {
   productRepository: IProductRepository;

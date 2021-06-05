@@ -1,7 +1,7 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICart, TCart, TCreditCard, TProduct } from '../../../domain/entities'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ICart, TCart, TCreditCard, TProduct } from "../../../domain/entities"
 import { InsuficientItemStockError, InvalidCardError, InsuficientStockError } from "../../../domain/usecases";
-import { RootState, AppThunk } from '../store';
+import { RootState, AppThunk } from "../store";
 import { Factory } from "../../../gateway/factory";
 
 const initialState: ICart = {

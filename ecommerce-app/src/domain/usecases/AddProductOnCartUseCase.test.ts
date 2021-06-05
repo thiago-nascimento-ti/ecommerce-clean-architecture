@@ -1,12 +1,12 @@
-import { TCart, TProduct } from '../entities';
-import { AddProductOnCartUseCase, InsuficientItemStockError } from './AddProductOnCartUseCase';
-import { FakeProductRepository } from '../repositories/ProductRepository.util';
+import { TCart, TProduct } from "../entities";
+import { AddProductOnCartUseCase, InsuficientItemStockError } from "./AddProductOnCartUseCase";
+import { FakeProductRepository } from "../repositories/ProductRepository.util";
 
 describe('add product on cart use case', () => {
   const productRepository: FakeProductRepository = new FakeProductRepository();
   const addProductOnCartUseCase: AddProductOnCartUseCase = new AddProductOnCartUseCase(productRepository);
-  const product1: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3, maxParcelas: 1}
-  const product2: TProduct = {id: 2, name: "product 02", description: "", price: 5.5, image: "", rate: 3, maxParcelas: 1}
+  const product1: TProduct = {id: 1, name: "product 01", description: "", price: 10, image: "", rate: 3, maxParcels: 1}
+  const product2: TProduct = {id: 2, name: "product 02", description: "", price: 5.5, image: "", rate: 3, maxParcels: 1}
 
   beforeEach(() => {
     productRepository.stock = 100;

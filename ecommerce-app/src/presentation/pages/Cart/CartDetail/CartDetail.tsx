@@ -1,9 +1,9 @@
 import React from "react";
-import { ICart } from '../../../../domain/entities';
+import { ICart } from "../../../../domain/entities";
 import { InsuficientItemStockError } from "../../../../domain/usecases";
 import CartDetailView, { TRecord } from "./CartDetailView";
 import { increment, decrement } from "../../../app/slices/cart";
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch } from "../../../app/hooks";
 import { showErrorModal } from "../../../components/Message/Message";
 
 type Props = {

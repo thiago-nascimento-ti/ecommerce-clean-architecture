@@ -1,7 +1,7 @@
 import React from "react";
 import { Breadcrumb } from "antd";
 import { styled } from "./BreadcrumbStyled";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 type Props =  {
   locationItems: Array<TLocation>

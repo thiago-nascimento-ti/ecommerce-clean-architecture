@@ -1,5 +1,5 @@
-import { TCreditCard, TCart } from '../entities';
-import { ICheckoutRepository, CheckoutStatus } from '../repositories';
+import { TCreditCard, TCart } from "../entities";
+import { ICheckoutRepository, CheckoutStatus } from "../repositories";
 
 export class ConfirmCheckoutUseCase {
   checkoutRepository: ICheckoutRepository;

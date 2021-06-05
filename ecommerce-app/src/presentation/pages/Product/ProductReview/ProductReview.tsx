@@ -2,8 +2,8 @@ import React from "react";
 import { TProduct } from "../../../../domain/entities";
 import { InsuficientItemStockError } from "../../../../domain/usecases";
 import ProductReviewView from "./ProductReviewView";
-import { increment } from '../../../app/slices/cart';
-import { useAppDispatch } from '../../../app/hooks';
+import { increment } from "../../../app/slices/cart";
+import { useAppDispatch } from "../../../app/hooks";
 import { showErrorModal, showSuccessNotification } from "../../../components/Message/Message";
 import useRoutes from "../../../hooks/useRoutes";
 

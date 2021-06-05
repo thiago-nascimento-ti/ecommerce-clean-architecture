@@ -1,8 +1,8 @@
-import { ICart, TProduct } from '../../../domain/entities'
-import cartReducer, { increment, decrement, selectCart } from './cart';
-import { RootState } from '../store';
-import configureMockStore from 'redux-mock-store'
-import thunk from 'redux-thunk'
+import { ICart, TProduct } from "../../../domain/entities"
+import cartReducer, { increment, decrement, selectCart } from "./cart";
+import { RootState } from "../store";
+import configureMockStore from "redux-mock-store"
+import thunk from "redux-thunk"
 
 describe('cart reducer', () => {
   const product: TProduct = {
@@ -11,7 +11,8 @@ describe('cart reducer', () => {
     description: "", 
     price: 10, 
     image: "", 
-    rate: 3
+    rate: 3,
+    maxParcels: 1
   }
   const initialState: ICart = {
     items: [{product, amount: 2}],

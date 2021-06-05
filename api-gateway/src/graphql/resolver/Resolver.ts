@@ -1,5 +1,5 @@
-import { gql, IResolvers } from 'apollo-server';
-import { DocumentNode } from 'graphql';
+import { gql, IResolvers } from "apollo-server";
+import { DocumentNode } from "graphql";
 import { LongScalarType } from "../schema/types/LongScalarType";
 
 export default function buildResolvers(resolvers: Array<Resolver>): GraphqlResolvers {

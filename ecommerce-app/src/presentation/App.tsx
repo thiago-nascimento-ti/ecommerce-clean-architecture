@@ -2,8 +2,8 @@ import * as React from "react";
 import { Home, Cart, Product, Checkout } from "./pages";
 import { Router } from "./pages/Router";
 import useRoutes from "./hooks/useRoutes";
-import { store } from './app/store';
-import { Provider } from 'react-redux';
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 
 type Props = {}
 const App: React.FC<Props> = () => {

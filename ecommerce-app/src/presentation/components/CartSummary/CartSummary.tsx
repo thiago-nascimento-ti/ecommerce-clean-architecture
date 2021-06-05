@@ -1,5 +1,5 @@
 import React from "react";
-import { ICart } from '../../../domain/entities';
+import { ICart } from "../../../domain/entities";
 import CartSummaryView from "./CartSummaryView";
 
 type Props = {

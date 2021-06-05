@@ -1,13 +1,13 @@
 import React from "react";
-import { ICart } from '../../../../domain/entities';
-import { InvalidCardError, InsuficientStockError } from '../../../../domain/usecases';
+import { ICart } from "../../../../domain/entities";
+import { InvalidCardError, InsuficientStockError } from "../../../../domain/usecases";
 import CheckoutDetailView, { TFormData } from "./CheckoutDetailView";
 import useRoutes from "../../../hooks/useRoutes";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 import { checkout } from "../../../app/slices/cart";
-import { useAppDispatch } from '../../../app/hooks';
+import { useAppDispatch } from "../../../app/hooks";
 import { showErrorModal, showSuccessModal } from "../../../components/Message/Message";
 
 const requiredText = "Esse campo é obrigatório";

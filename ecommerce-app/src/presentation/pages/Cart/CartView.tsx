@@ -1,5 +1,5 @@
 import React from "react";
-import { ICart } from '../../../domain/entities';
+import { ICart } from "../../../domain/entities";
 import CartReview from "./CartReview";
 import CartDetail from "./CartDetail";
 import ReviewLayout, { Detail, Review} from "../../components/ReviewLayout";

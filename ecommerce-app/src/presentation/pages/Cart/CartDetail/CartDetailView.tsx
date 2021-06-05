@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Input, Empty } from "antd";
 import { styled } from "./CartDetailStyled";
-import { Table, Image, Space } from 'antd';
+import { Table, Image, Space } from "antd";
 import { brPriceFormat } from "../../../components/BRPrice"
 
 type Props = {

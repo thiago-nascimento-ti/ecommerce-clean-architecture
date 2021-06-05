@@ -1,8 +1,8 @@
 import React from "react";
-import { ICart } from '../../../domain/entities';
+import { ICart } from "../../../domain/entities";
 import { styled } from "./CartSummaryStyled";
 import InlinePrice from "../InlinePrice";
-import { Divider } from 'antd';
+import { Divider } from "antd";
 
 type Props = {
   cart: ICart

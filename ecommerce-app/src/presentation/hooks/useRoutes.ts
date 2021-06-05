@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 export default function useRoutes(): TRoutes {
   const history = useHistory();

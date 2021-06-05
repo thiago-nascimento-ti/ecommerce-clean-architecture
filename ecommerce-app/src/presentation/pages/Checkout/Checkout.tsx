@@ -1,7 +1,7 @@
 import React from "react";
 import CheckoutView from "./CheckoutView";
-import { selectCart } from '../../app/slices/cart';
-import { useAppSelector } from '../../app/hooks';  
+import { selectCart } from "../../app/slices/cart";
+import { useAppSelector } from "../../app/hooks";  
 import useRoutes from "../../hooks/useRoutes";
 
 type Props = {};

@@ -1,8 +1,8 @@
 import React from "react";
 import CartButtonView from "./CartButtonView";
-import { selectCart } from '../../app/slices/cart';
-import { useAppSelector } from '../../app/hooks';
-import useRoutes from '../../hooks/useRoutes';
+import { selectCart } from "../../app/slices/cart";
+import { useAppSelector } from "../../app/hooks";
+import useRoutes from "../../hooks/useRoutes";
 
 type Props = {}
 const CartButton: React.FC<Props> = () => {

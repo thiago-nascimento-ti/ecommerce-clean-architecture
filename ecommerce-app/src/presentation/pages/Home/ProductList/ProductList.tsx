@@ -5,9 +5,9 @@ import { InsuficientItemStockError } from "../../../../domain/usecases";
 import useProductList from "../../../hooks/useProductList";
 import usePagination from "../../../hooks/usePagination";
 import ProductListView from "./ProductListView";
-import { increment } from '../../../app/slices/cart';
-import { useAppDispatch } from '../../../app/hooks';
-import { withRouter, RouterProps } from 'react-router-dom'
+import { increment } from "../../../app/slices/cart";
+import { useAppDispatch } from "../../../app/hooks";
+import { withRouter, RouterProps } from "react-router-dom";
 import useRoutes from "../../../hooks/useRoutes";
 import { showErrorModal, showSuccessNotification } from "../../../components/Message/Message";
 

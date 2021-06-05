@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server';
+import { gql } from "apollo-server";
 import { GraphQLScalarType } from "graphql";
 
 export const LongScalarType = new GraphQLScalarType({

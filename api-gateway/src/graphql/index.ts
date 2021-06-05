@@ -1,7 +1,7 @@
-import { ApolloServer } from 'apollo-server';
-import resolver from './resolver';
-import Types from './schema/types';
-import Inputs from './schema/inputs';
+import { ApolloServer } from "apollo-server";
+import resolver from "./resolver";
+import Types from "./schema/types";
+import Inputs from "./schema/inputs";
 
 const { schemas, resolvers } = resolver;
 

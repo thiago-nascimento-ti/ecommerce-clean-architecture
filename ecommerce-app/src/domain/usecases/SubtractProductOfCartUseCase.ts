@@ -1,4 +1,4 @@
-import { TCart, TProduct } from '../entities';
+import { TCart, TProduct } from "../entities";
 
 export class SubtractProductOfCartUseCase {
   execute(cart: TCart, product: TProduct, amount: number) {

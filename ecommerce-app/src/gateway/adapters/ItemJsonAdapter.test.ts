@@ -2,7 +2,7 @@ import { IItem, TItem, TProduct } from "../../domain/entities";
 import { ItemJsonAdapter } from "./ItemJsonAdapter";
 
 describe('Item Json Adapter tests', () => {
-  const product: TProduct = {id: 1, name: `teste`, description: "", price: 10, image: "", rate: 3, maxParcelas: 1}
+  const product: TProduct = {id: 1, name: `teste`, description: "", price: 10, image: "", rate: 3, maxParcels: 1}
   
   it('should convert TItem to Json', () => {
     const item: TItem = new TItem(product, 1)

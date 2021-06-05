@@ -1,5 +1,5 @@
-import { useLocation } from 'react-router-dom';
-import { Location } from 'history';
+import { useLocation } from "react-router-dom";
+import { Location } from "history";
 
 export default function useBreadcrumb(): Array<TLocation> {
   const location = useLocation();
