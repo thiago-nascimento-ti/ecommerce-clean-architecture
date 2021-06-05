@@ -36,6 +36,9 @@ Rodando o checkstyle
 ./gradlew checkstyleMain checkstyleTest
 ```
 
+
+###### Obs: Caso esteja com dificuldade de subir esse serviço por algum motivo, pode subir também a versão mockada executando `npm run mock-api` na pasta do [api-gateway](/api-gateway). A diferença entre essas versões é que a mockada não válida os dados de cartões e estoque no fechamento do pedido, mas o resto deve funcionar corretamente. 
+
 ## Tecnologias utilizadas
 
 1. Java 11 como linguagem base.
@@ -131,3 +134,7 @@ Responsável por tratar as exceptions de negócios lançando exceções que o Sp
 ##### Resources
 
 É onde definimos nossos endpoints rest utilizando o SpringMVC e todas as camadas acima.
+
+## Utilitários
+1. [Postman](/docs/Ecommerce%20Rest%20API.postman_collection.json) - collection com os endpoints da API
+2. [DefaultData](/ecommerce-api/src/infrastructure/src/main/resources/mongo/defaultData.json) - Dados que são carregados ao subir a aplicação a primeira vez.
