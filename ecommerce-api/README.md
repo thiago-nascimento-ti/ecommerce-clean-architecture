@@ -53,11 +53,14 @@ Foi utilizado clean-architecture para desacoplar as regras de negócios de depen
 
 ![GitHub Logo](/images/ecommerce-api-architecture.png)
 
-Dentro dessa arquitetura temos as seguintes camadas
+Dentro dessa arquitetura o projeto foi modularizado para evitar uso indevido de depêndencias.
+
+![GitHub Logo](/images/backend.png)
 
 ### Core
+Essa camada deve ser livre de dependências externas, mantendo nossas regras de negócios isoladas.
 
-Essa camada deve ser livre de dependências externas, dentro dela temos as classes:
+![GitHub Logo](/images/backend-core.png)
 
 ##### Entity
 
@@ -80,8 +83,9 @@ Utilizado para orquestrar os UseCases e expô-los nas camadas acima. Como uma de
 Exceções de negócio que estendem apenas exceções do próprio Java e devem ser tratadas na camada de infrastructure.
 
 ### Adapters
-
 Essa camada trata de converter as entidades de neǵocios em modelos de banco e DTOs utilizados nas camadas de infrastructure. Nessa camada já possuímos um mínimo de influência de frameworks, geralmente de anotações de ORM.
+
+![GitHub Logo](/images/backend-adapters.png)
 
 ##### Model
 
@@ -105,6 +109,8 @@ Representa um DTO de entrada de dados e estende de InputMapper, implementando a 
 
 ### Infrastructure
 Nessa camada mantemos todas as dependências de bibliotecas, frameworks ou estruturas externas.
+
+![GitHub Logo](/images/backend-infrastructure.png)
 
 ##### MongoRepository
 
