@@ -1,5 +1,9 @@
 # Ecommerce APP
 
+Aplicação front-end para o projeto Ecommerce.
+
+## Get Starting
+
 Instando as dependências
 `yarn install`
 
