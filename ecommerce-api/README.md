@@ -7,7 +7,13 @@ API Rest do projeto Ecommerce
 Com essa opção não é necessário instalar o Java, gradle e nem o MongoDB, basta ter o docker compose, os dados de produtos iniciais já serão carregados no banco.
 
 ```
-docker-compose build && docker-compose up
+docker-compose up
+```
+
+Se precisar alterar o código basta buildar a aplicação novamente.
+
+```
+docker-compose build
 ```
 
 ## Rodando o projeto com gradle (Opcional)
@@ -79,7 +85,7 @@ Representa uma ação de negócio, geralmente seguindo o [padrão de projeto Com
 
 ##### Service
 
-Utilizado para orquestrar os UseCases e expô-los nas camadas acima. Como uma decisão minha, preferi não utilizá-los diretamente em outras camadas, facilitando a injeção de dependência.
+Utilizado para orquestrar os UseCases e expô-los nas camadas acima. Como uma decisão minha, preferi não utilizar use case diretamente em outras camadas e sim o service, facilitando a injeção de dependência.
 
 ##### BussinessException
 

@@ -81,3 +81,4 @@ Na página de produtos temos alguns recursos implementados.
 1. O botão `carrinho` será apresentado em todas as páginas e ao ser pressionado redireciona o usuário para a página de carrinho.
 2. Um breadcrumb é criado dinamicamente em cada página e é possível pressionar em `home` para voltar à página anterior.
 3. Os dados do carrinho são armazenados no Redux e LocalStorage, ao acessar a URL diretamente o Redux carrega o LocalStorage com os dados anteriores.
+4. O layout foi desenvolvido em forma responsiva utilizando os grid do Ant Design.
