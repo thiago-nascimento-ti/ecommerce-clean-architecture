@@ -2,12 +2,14 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: api
+  labels:
+    app: api
 spec:
   containers:
   - name: api
     image: thsnascimento/ecommerce-api:latest
     ports:
-    - containerPort: 80
+    - containerPort: 8080
     env:
     - name: SPRING_DATA_MONGODB_HOST
       value: mongo-svc
